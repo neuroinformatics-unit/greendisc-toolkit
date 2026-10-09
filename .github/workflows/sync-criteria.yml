@@ -29,14 +29,19 @@ jobs:
           track: ${{ steps.config.outputs.track }}
           ref: ${{ steps.config.outputs.ref }}
 
-      - name: Open pull request if criteria changed
+      - name: Open pull request if criteria changed, else close a stale one
         env:
           GH_TOKEN: ${{ github.token }}
           OLD_COMMIT: ${{ steps.config.outputs.old_commit }}
         run: |
+          branch=greendisc/sync-criteria
           git add criteria.yml
           if git diff --cached --quiet; then
             echo "criteria.yml is up to date"
+            # Close a sync PR left over from an earlier run (e.g. criteria_ref was reverted).
+            if [ "$(gh pr view "$branch" --json state -q .state 2>/dev/null)" = OPEN ]; then
+              gh pr close "$branch" --delete-branch --comment "criteria.yml is already up to date; closing."
+            fi
             exit 0
           fi
           source=$(yq '.source' criteria.yml)
@@ -45,7 +50,6 @@ jobs:
           if [ -n "$OLD_COMMIT" ] && [ "$OLD_COMMIT" != "$new_commit" ]; then
             body+=$'\n\n'"Review the [upstream changes since ${OLD_COMMIT:0:7}](${source}/compare/${OLD_COMMIT}...${new_commit}), including wording not captured in \`criteria.yml\`."
           fi
-          branch=greendisc/sync-criteria
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git switch -C "$branch"
