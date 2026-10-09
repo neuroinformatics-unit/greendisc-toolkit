@@ -1,0 +1,9 @@
+# Green DiSC toolkit settings for this repository.
+
+# Criteria track: RG (Research Group), CT (Central Team)
+# or RCI (Research Computing Infrastructure).
+track: RG
+
+# Upstream Green DiSC branch, tag or commit SHA to sync criteria from.
+# Leave on main to follow upstream; set a SHA to pin.
+criteria_ref: main

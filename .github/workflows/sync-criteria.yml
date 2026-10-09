@@ -1,0 +1,55 @@
+name: Sync Green DiSC criteria
+
+# Regenerates criteria.yml from upstream and opens a pull request if it changed.
+on:
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # push the sync branch
+      pull-requests: write # open the pull request
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Read settings
+        id: config
+        run: |
+          echo "track=$(yq '.track // "RG"' config.yml)" >> "$GITHUB_OUTPUT"
+          echo "ref=$(yq '.criteria_ref // "main"' config.yml)" >> "$GITHUB_OUTPUT"
+          if [ -f criteria.yml ]; then
+            echo "old_commit=$(yq '.source_commit' criteria.yml)" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: lochhh/actions/greendisc_toolkit/sync_criteria@ca29d34c269874e5fb09b0bda30a0673bce0e196 # greendisc-toolkit branch (untagged)
+        with:
+          track: ${{ steps.config.outputs.track }}
+          ref: ${{ steps.config.outputs.ref }}
+
+      - name: Open pull request if criteria changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+          OLD_COMMIT: ${{ steps.config.outputs.old_commit }}
+        run: |
+          git add criteria.yml
+          if git diff --cached --quiet; then
+            echo "criteria.yml is up to date"
+            exit 0
+          fi
+          source=$(yq '.source' criteria.yml)
+          new_commit=$(yq '.source_commit' criteria.yml)
+          body="Regenerated \`criteria.yml\` from upstream commit ${new_commit}."
+          if [ -n "$OLD_COMMIT" ] && [ "$OLD_COMMIT" != "$new_commit" ]; then
+            body+=$'\n\n'"Review the upstream changes, including wording not captured in criteria.yml: ${source}/compare/${OLD_COMMIT}...${new_commit}"
+          fi
+          branch=greendisc/sync-criteria
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -C "$branch"
+          git commit -m "Sync Green DiSC criteria"
+          git push --force origin "$branch"
+          gh pr create --title "Sync Green DiSC criteria" --body "$body" --head "$branch" \
+            || gh pr edit "$branch" --body "$body"
