@@ -41,9 +41,9 @@ jobs:
           fi
           source=$(yq '.source' criteria.yml)
           new_commit=$(yq '.source_commit' criteria.yml)
-          body="Regenerated \`criteria.yml\` from upstream commit ${new_commit}."
+          body="Regenerated \`criteria.yml\` from upstream commit [${new_commit:0:7}](${source}/commit/${new_commit})."
           if [ -n "$OLD_COMMIT" ] && [ "$OLD_COMMIT" != "$new_commit" ]; then
-            body+=$'\n\n'"Review the upstream changes, including wording not captured in criteria.yml: ${source}/compare/${OLD_COMMIT}...${new_commit}"
+            body+=$'\n\n'"Review the [upstream changes since ${OLD_COMMIT:0:7}](${source}/compare/${OLD_COMMIT}...${new_commit}), including wording not captured in \`criteria.yml\`."
           fi
           branch=greendisc/sync-criteria
           git config user.name "github-actions[bot]"
