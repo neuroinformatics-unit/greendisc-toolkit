@@ -8,7 +8,7 @@ The **Sync Green DiSC criteria** workflow (`.github/workflows/sync-criteria.yml`
 
 1. reads `track` and `criteria_ref` from `config.yml`;
 2. reads the criteria from the [upstream Green DiSC repository](https://github.com/Cambridge-Sustainable-Computing-Lab/greenDiSC) at that ref and regenerates `criteria.yml`;
-3. if anything changed, pushes the `greendisc/sync-criteria` branch and opens a pull request (or updates the open one).
+3. if anything changed, pushes the `greendisc/sync-criteria` branch and opens a pull request (or updates the open one); if nothing changed, closes any sync pull request still open from an earlier run.
 
 The pull request links the upstream comparison between the previous and the new `source_commit`. `criteria.yml` only carries IDs and titles, so check that link for changes to the *Why / How / Acceptable Evidence* text that may affect your evidence.
 
