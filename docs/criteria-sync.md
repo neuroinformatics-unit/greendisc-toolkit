@@ -10,6 +10,8 @@ The **Sync Green DiSC criteria** workflow (`.github/workflows/sync-criteria.yml`
 2. reads the criteria from the [upstream Green DiSC repository](https://github.com/Cambridge-Sustainable-Computing-Lab/greenDiSC) at that ref and regenerates `criteria.yml`;
 3. if anything changed, pushes the `greendisc/sync-criteria` branch and opens a pull request (or updates the open one); if nothing changed, closes any sync pull request still open from an earlier run.
 
+`source_commit` in `criteria.yml` is the last upstream commit that changed your track's criteria files, not necessarily upstream's latest commit: upstream changes to other files (their README, overview PDF, other tracks) don't open a pull request.
+
 The pull request links the upstream comparison between the previous and the new `source_commit`. `criteria.yml` only carries IDs and titles, so check that link for changes to the *Why / How / Acceptable Evidence* text that may affect your evidence.
 
 If upstream changes its file format, the workflow fails instead of writing a wrong file. Check the run log, and report the problem to the toolkit maintainers.
