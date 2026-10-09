@@ -1,0 +1,25 @@
+name: My Green DiSC record
+description: The equipment you use, for the group's Green DiSC evidence. One record per person; edit it to keep it up to date.
+title: "Green DiSC record: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        List what **you** use or look after. Leave a cell blank if you don't know; it's saved as `unknown` so it can be filled in later.
+
+        When you're done, submit this issue and comment `/save`. To update it later (a new monitor, a laptop retired), edit this issue and comment `/save` again. If you already have a record, edit that one instead of creating another.
+  - type: textarea
+    id: hardware
+    attributes:
+      label: Hardware
+      description: |
+        One row per item (laptop, monitors, docking station, …). Copy a row to add more, and keep the header row as it is.
+        - **Type**: laptop, desktop, monitor, tablet, external drive, docking station, other
+        - **Purchased**: year, e.g. 2023
+        - **Status**: in use, unused, disposed
+        - **Action**: for unused or disposed items, what was or will be done (repurpose, donate, recycle, …)
+        - **Location**, **Asset tag**: optional. Leave blank if this repository is or could become public.
+      value: |
+        | Type | Model | Supplier | Purchased | Warranty | Status | Action | Location | Asset tag |
+        |------|-------|----------|-----------|----------|--------|--------|----------|-----------|
+        |      |       |          |           |          |        |        |          |           |

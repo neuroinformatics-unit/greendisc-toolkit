@@ -1,0 +1,27 @@
+name: Save Green DiSC records
+
+# Welcomes new record issues and saves them to data/*.csv when someone comments /save.
+on:
+  issues:
+    types: [opened]
+  issue_comment:
+    types: [created]
+
+permissions: {}
+
+jobs:
+  record:
+    # Issues only (not pull requests), and only people with write access.
+    if: >-
+      !github.event.issue.pull_request &&
+      (github.event_name == 'issues' || startsWith(github.event.comment.body, '/save')) &&
+      contains(fromJSON('["OWNER", "MEMBER", "COLLABORATOR"]'),
+        github.event_name == 'issues' && github.event.issue.author_association || github.event.comment.author_association)
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # commit the CSV files
+      issues: write # label, comment on and close the record issue
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - uses: lochhh/actions/greendisc_toolkit/save_record@bcfcb1d0eec33f2617fe2a6800b3e79098960cb4 # greendisc-toolkit branch (untagged)
