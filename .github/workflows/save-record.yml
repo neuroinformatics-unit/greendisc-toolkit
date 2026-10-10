@@ -24,4 +24,4 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - uses: lochhh/actions/greendisc_toolkit/save_record@bcfcb1d0eec33f2617fe2a6800b3e79098960cb4 # greendisc-toolkit branch (untagged)
+      - uses: lochhh/actions/greendisc_toolkit/save_record@11b6836870260b6d83f9477a24c3b3e402f52468 # greendisc-toolkit branch (untagged)
