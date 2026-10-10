@@ -12,7 +12,7 @@ More sections (data resources, data cleaning, pipelines) and a separate group re
 
 1. **Issues → New issue → My Green DiSC record.**
 2. Fill in the table: one row per item, copying a row to add more. Leave a cell blank if you don't know; it is saved as `unknown` so it can be filled in later.
-3. Submit the issue. The bot replies with how to save it.
+3. Click **Create**. The bot replies with how to save it.
 4. Comment `/save`. The bot checks every row, saves them, replies with a summary (including how many values are still `unknown`) and closes the issue.
 
 If something is wrong (say, `phone` as a type, or `22` as a year), nothing is saved: the bot replies listing each problem by row and column. Edit the issue, fix them and comment `/save` again.
