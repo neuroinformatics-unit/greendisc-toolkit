@@ -12,14 +12,15 @@ body:
     id: hardware
     attributes:
       label: Hardware
-      description: |
-        One row per item (laptop, monitors, docking station, …). Copy a row to add more, and keep the header row as it is.
-        - **Type**: laptop, desktop, monitor, tablet, external drive, docking station, other
-        - **Purchased**: year, e.g. 2023
-        - **Status**: in use, unused, disposed
-        - **Action**: for unused or disposed items, what was or will be done (repurpose, donate, recycle, …)
-        - **Location**, **Asset tag**: optional. Leave blank if this repository is or could become public.
+      description: One row per item. Copy a row to add more, and keep the header row as it is. Guidance is in the comment above the table, which stays visible whenever you edit the issue.
       value: |
+        <!--
+        Type: what it is, e.g. laptop, desktop, monitor, tablet, external drive, docking station
+        Purchased: year, e.g. 2023
+        Status: in use, unused or disposed
+        Action: for unused or disposed items, what was or will be done (repurpose, donate, recycle, ...)
+        Location, Asset tag: optional. Leave blank if this repository is or could become public.
+        -->
         | Type | Model | Supplier | Purchased | Warranty | Status | Action | Location | Asset tag |
         |------|-------|----------|-----------|----------|--------|--------|----------|-----------|
         |      |       |          |           |          |        |        |          |           |
