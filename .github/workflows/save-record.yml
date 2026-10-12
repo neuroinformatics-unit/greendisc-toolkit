@@ -1,9 +1,10 @@
 name: Save Green DiSC records
 
-# Welcomes new record issues and saves them to data/*.csv when someone comments /save.
+# Welcomes new record issues, flags edits not yet saved, and saves records to
+# data/*.csv when someone comments /save.
 on:
   issues:
-    types: [opened]
+    types: [opened, edited]
   issue_comment:
     types: [created]
 
@@ -20,8 +21,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write # commit the CSV files
-      issues: write # label, comment on and close the record issue
+      issues: write # label and comment on record issues, close duplicates
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - uses: lochhh/actions/greendisc_toolkit/save_record@5d2b662e5706fd2db44aa4f433ff9106e5c26239 # greendisc-toolkit branch (untagged)
+      - uses: lochhh/actions/greendisc_toolkit/save_record@bed7b7c9e082bbedffd7d38933ed4660586df6ba # greendisc-toolkit branch (untagged)

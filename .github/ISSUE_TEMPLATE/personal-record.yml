@@ -7,7 +7,7 @@ body:
       value: |
         List what **you** use or look after. Leave a cell blank if you don't know; it's saved as `unknown` so it can be filled in later.
 
-        When you're done, click **Create**, then comment `/save` on the new issue to save your record. To update it later (a new monitor, a laptop retired), edit this issue and comment `/save` again. If you already have a record, edit that one instead of creating another.
+        When you're done, click **Create**, then comment `/save` on the new issue to save your record. Keep the issue open: to update it later (a new monitor, a laptop retired), edit it and comment `/save` again. If you already have a record, edit that one instead of creating another.
   - type: textarea
     id: hardware
     attributes:
