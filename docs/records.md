@@ -1,17 +1,20 @@
 # Recording evidence
 
-Each member keeps **one record issue** listing the equipment they use or look after. The toolkit saves these records to CSV files in `data/`, which become the inventories for your Green DiSC submission.
+Each member keeps **one record issue** listing the equipment, data and pipelines they use or look after. The toolkit saves these records to CSV files in `data/`, which become the inventories for your Green DiSC submission.
 
 | Section | Criteria | Saved to |
 |---|---|---|
 | Hardware | `01-B` computing hardware inventory; `02-B` unused equipment (items with status `unused`) | `data/hardware.csv` |
+| Data resources | `DS1-B` data resource inventory | `data/data-resources.csv` |
+| Data cleaning | `DS2-B` data directory cleaning (one row per cleanup) | `data/data-cleaning.csv` |
+| Pipelines | `HPC2-B` computing pipeline inventory | `data/pipelines.csv` |
 
-More sections (data resources, data cleaning, pipelines) and a separate group record are coming.
+Leave a table empty if it doesn't apply to you. A separate group record (shared infrastructure, group cleanups, training, sharing) is coming.
 
 ## Creating your record
 
 1. **Issues → New issue → My Green DiSC record.**
-2. Fill in the table: one row per item, copying a row to add more. The comment above the table (visible when editing) says what each column expects. **Type** is free text; use the suggested names where they fit so items are counted together. Leave a cell blank if you don't know; it is saved as `unknown` so it can be filled in later.
+2. Fill in the table: one row per item, copying a row to add more. The comment above the table (visible when editing) says what each column expects. **Type** is free text; use the suggested names where they fit so items are counted together. Leave a cell blank if you don't know; it is saved as `unknown` so it can be filled in later. Every table also has an optional **Notes** column, which can stay blank.
 3. Click **Create**. The bot labels it `unsaved changes` and replies with how to save it.
 4. Comment `/save`. The bot checks every row, saves them, replies with a summary (including how many values are still `unknown`) and removes the `unsaved changes` label.
 
@@ -28,6 +31,9 @@ Editing the table adds the `unsaved changes` label, and a successful `/save` rem
 - **New item:** add a row.
 - **Item no longer used:** set its status to `unused` and say in **Action** what will happen to it.
 - **Item gone:** set its status to `disposed` and say in **Action** what happened (returned, donated, recycled, …). Keep the row: Green DiSC asks what happened to equipment.
+- **Dataset no longer needed:** set its status to `archived` or `deleted`. Keep the row.
+- **Pipeline no longer run:** set its status to `retired`. Keep the row.
+- **Cleanup done:** add a row to Data cleaning and keep the earlier ones; together they show how often you clean.
 
 Find your record with the issue search `is:issue label:personal-record author:@me`.
 

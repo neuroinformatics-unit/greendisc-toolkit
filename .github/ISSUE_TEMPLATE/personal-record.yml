@@ -1,13 +1,13 @@
 name: My Green DiSC record
-description: The equipment you use, for the group's Green DiSC evidence. One record per person; edit it to keep it up to date.
+description: The equipment, data and pipelines you use, for the group's Green DiSC evidence. One record per person; edit it to keep it up to date.
 title: "Green DiSC record: "
 body:
   - type: markdown
     attributes:
       value: |
-        List what **you** use or look after. Leave a cell blank if you don't know; it's saved as `unknown` so it can be filled in later.
+        List what **you** use or look after. Leave a cell blank if you don't know; it's saved as `unknown` so it can be filled in later. Leave a whole table empty if it doesn't apply to you.
 
-        When you're done, click **Create**, then comment `/save` on the new issue to save your record. Keep the issue open: to update it later (a new monitor, a laptop retired), edit it and comment `/save` again. If you already have a record, edit that one instead of creating another.
+        When you're done, click **Create**, then comment `/save` on the new issue to save your record. Keep the issue open: to update it later (a new monitor, a dataset archived, a cleanup done), edit it and comment `/save` again. If you already have a record, edit that one instead of creating another.
   - type: textarea
     id: hardware
     attributes:
@@ -20,7 +20,60 @@ body:
         Status: in use, unused or disposed
         Action: for unused or disposed items, what was or will be done (repurpose, donate, recycle, ...)
         Location, Asset tag: optional. Leave blank if this repository is or could become public.
+        Notes: optional, anything that helps (e.g. shared with a colleague, waiting for IT)
         -->
-        | Type | Model | Supplier | Purchased | Warranty | Status | Action | Location | Asset tag |
-        |------|-------|----------|-----------|----------|--------|--------|----------|-----------|
-        |      |       |          |           |          |        |        |          |           |
+        | Type | Model | Supplier | Purchased | Warranty | Status | Action | Location | Asset tag | Notes |
+        |------|-------|----------|-----------|----------|--------|--------|----------|-----------|-------|
+        |      |       |          |           |          |        |        |          |           |       |
+  - type: textarea
+    id: data-resources
+    attributes:
+      label: Data resources
+      description: The main datasets you use or look after, including ones hosted elsewhere. One row per dataset.
+      value: |
+        <!--
+        Name: what the dataset is called
+        Hosted by: us (we store it) or external (someone else hosts it; the other columns can stay brief)
+        Location: where it's stored, e.g. cluster, cloud bucket, lab server. Leave blank if this repository is or could become public.
+        Size: e.g. 500 GB, ~3 TB
+        If lost: easy to replace, hard to replace or irreplaceable
+        Status: in use, archived or deleted
+        Notes: optional, anything that helps (e.g. shared with a colleague, waiting for IT)
+        -->
+        | Name | Hosted by | Location | Size | If lost | Status | Notes |
+        |------|-----------|----------|------|---------|--------|-------|
+        |      |           |          |      |         |        |       |
+  - type: textarea
+    id: data-cleaning
+    attributes:
+      label: Data cleaning
+      description: Each time you clean up your data directories. Add a row per cleanup, keeping earlier rows.
+      value: |
+        <!--
+        Date: when you cleaned up, as YYYY-MM-DD, e.g. 2026-10-13
+        Scope: what you went through, e.g. my scratch space on the cluster
+        Freed: storage freed, e.g. 40 GB, ~1 TB
+        Next: when you plan the next cleanup, as YYYY-MM-DD
+        Notes: optional, anything that helps (e.g. shared with a colleague, waiting for IT)
+        -->
+        | Date | Scope | Freed | Next | Notes |
+        |------|-------|-------|------|-------|
+        |      |       |       |      |       |
+  - type: textarea
+    id: pipelines
+    attributes:
+      label: Pipelines
+      description: The computing pipelines you run. One row per pipeline.
+      value: |
+        <!--
+        Name: what the pipeline is called or does
+        Runs on: e.g. the cluster's name, cloud, laptop
+        Runtime: per run, e.g. 3 h, 2 days
+        Resources: per run, e.g. 4 GPUs, 64 GB RAM
+        Frequency: how often it runs, e.g. weekly, ~200 a year
+        Status: active or retired
+        Notes: optional, anything that helps (e.g. shared with a colleague, waiting for IT)
+        -->
+        | Name | Runs on | Runtime | Resources | Frequency | Status | Notes |
+        |------|---------|---------|-----------|-----------|--------|-------|
+        |      |         |         |           |           |        |       |
