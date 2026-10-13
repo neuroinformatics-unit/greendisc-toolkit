@@ -13,11 +13,11 @@ More sections (data resources, data cleaning, pipelines) and a separate group re
 1. **Issues → New issue → My Green DiSC record.**
 2. Fill in the table: one row per item, copying a row to add more. The comment above the table (visible when editing) says what each column expects. **Type** is free text; use the suggested names where they fit so items are counted together. Leave a cell blank if you don't know; it is saved as `unknown` so it can be filled in later.
 3. Click **Create**. The bot labels it `unsaved changes` and replies with how to save it.
-4. Comment `/save` (just that, on its own). The bot checks every row, saves them, replies with a summary (including how many values are still `unknown`) and removes the `unsaved changes` label.
+4. Comment `/save`. The bot checks every row, saves them, replies with a summary (including how many values are still `unknown`) and removes the `unsaved changes` label.
 
 **Keep your record open.** It's yours for as long as you're in the group; it is only closed when you leave (see below).
 
-If something is wrong (say, `broken` as a status, or `22` as a year), nothing is saved: the bot replies listing each problem by row and column. Edit the issue, fix them and comment `/save` again.
+If something is wrong (e.g. `broken` as a status, or `22` as a year), nothing is saved: the bot replies listing each problem by row and column. Edit the issue, fix them and comment `/save` again.
 
 ## Keeping it up to date
 
@@ -43,7 +43,7 @@ The representative updates their record (each item's status, with an **Action** 
 
 ## The CSV files
 
-The bot is the only writer of `data/*.csv`. Each row has a `record` column with its issue number, which is how a later `/save` finds the rows to replace, so **don't edit the CSV files directly**: change the issue and `/save` instead, or your edit will be overwritten.
+The bot is the only writer of `data/*.csv`. Each row has a `record` column with its issue number, which is how a later `/save` finds the rows to replace, so **don't edit the CSV files directly**: change the issue and `/save` instead, or your edit will be overwritten the next time that record is saved.
 
 ## Privacy
 
