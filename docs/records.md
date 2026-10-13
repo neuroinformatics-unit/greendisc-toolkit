@@ -48,7 +48,3 @@ The bot is the only writer of `data/*.csv`. Each row has a `record` column with 
 ## Privacy
 
 **Location** and **Asset tag** are optional, and owner names are implied by who created each record. Keep the repository private if you record them. The public summary only ever contains counts, never rows.
-
-## Permissions
-
-The workflow (`.github/workflows/save-record.yml`) needs `contents: write` (to commit the CSV files) and `issues: write` (to label and comment on record issues, and close duplicates), using the default `GITHUB_TOKEN`.

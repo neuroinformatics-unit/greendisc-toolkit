@@ -1,8 +1,12 @@
 name: Sync Green DiSC criteria
 
 # Regenerates criteria.yml from upstream and opens a pull request if it changed.
+# Runs on demand, and whenever config.yml (track or criteria_ref) changes.
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [config.yml]
 
 permissions: {}
 

@@ -18,7 +18,7 @@ If upstream changes its file format, the workflow fails instead of writing a wro
 
 ## Running it
 
-Run it from the **Actions** tab → *Sync Green DiSC criteria* → *Run workflow*. Run it once after creating your repository from the template, to create `criteria.yml`.
+It runs automatically whenever a change to `config.yml` reaches `main`, so changing `track` or `criteria_ref` keeps `criteria.yml` in step. You can also run it from the **Actions** tab → *Sync Green DiSC criteria* → *Run workflow*.
 
 ## Settings
 
@@ -28,12 +28,6 @@ In `config.yml`:
 |---|---|---|
 | `track` | `RG` | `RG` (Research Group), `CT` (Central Team) or `RCI` (Research Computing Infrastructure) |
 | `criteria_ref` | `main` | Upstream branch, tag or commit SHA. Leave on `main` to follow upstream; set a SHA to pin. |
-
-## Permissions
-
-The job needs `contents: write` (to push the sync branch) and `pull-requests: write` (to open the pull request), using the default `GITHUB_TOKEN`.
-
-The repository must allow workflows to open pull requests: **Settings → Actions → General → Workflow permissions → Allow GitHub Actions to create and approve pull requests**. Organisations can disable this setting for all their repositories; ask an organisation owner if it is greyed out.
 
 ## Licence
 
