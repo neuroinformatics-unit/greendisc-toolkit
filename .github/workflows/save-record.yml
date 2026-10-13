@@ -12,7 +12,8 @@ permissions: {}
 
 jobs:
   record:
-    # Issues only (not pull requests), and only people with write access.
+    # Issues only (not pull requests); a first filter, the action checks each
+    # commenter's actual role before saving.
     if: >-
       !github.event.issue.pull_request &&
       (github.event_name == 'issues' || startsWith(github.event.comment.body, '/save')) &&
@@ -25,4 +26,4 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - uses: lochhh/actions/greendisc_toolkit/save_record@bed7b7c9e082bbedffd7d38933ed4660586df6ba # greendisc-toolkit branch (untagged)
+      - uses: lochhh/actions/greendisc_toolkit/save_record@b9d7ba51b311a7b77917b4e023b4a88ec6b61d51 # greendisc-toolkit branch (untagged)

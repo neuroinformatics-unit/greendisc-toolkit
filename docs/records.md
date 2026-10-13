@@ -35,7 +35,7 @@ Each person has one record. Opening a second one gets it closed with a link to t
 
 ## Who can save
 
-Only people with write access to the repository (owners, members and collaborators) can save records; comments from anyone else are ignored. Anyone with write access can save any record, so the Green DiSC representative can update the record of someone who has left.
+You can save your own record if you have **Write** access to the repository. People with the **Maintain** or **Admin** role can save anyone's record, so give the Green DiSC representative Maintain: they can then update the record of someone who has left. Anyone else who comments `/save` gets a reply explaining that nothing was saved.
 
 ## When someone leaves
 
