@@ -8,7 +8,7 @@ A GitHub template that helps research groups and teams gather, organise and revi
 
 1. Click **Use this template** to create your own repository (**private** if you will record locations or owners).
 2. Follow [Setting up your repository](docs/setup.md): allow the toolkit's actions, set your track in `config.yml` (which syncs the criteria) and add people.
-3. Ask each member to create their record: **Issues → New issue → My Green DiSC record**, then comment `/save`.
+3. Create the group record and ask each member to create theirs: **Issues → New issue**, then comment `/save`.
 
 ## Documentation
 

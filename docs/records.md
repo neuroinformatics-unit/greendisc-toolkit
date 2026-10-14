@@ -1,6 +1,8 @@
 # Recording evidence
 
-Each member keeps **one record issue** listing the equipment, data and pipelines they use or look after. The toolkit saves these records to CSV files in `data/`, which become the inventories for your Green DiSC submission.
+Each member keeps **one personal record issue** listing the equipment, data and pipelines they use or look after, and the group shares **one group record** for what it does together. The toolkit saves these records to CSV files in `data/`, which become evidence for your Green DiSC submission.
+
+**Personal record:**
 
 | Section | Criteria | Saved to |
 |---|---|---|
@@ -9,7 +11,15 @@ Each member keeps **one record issue** listing the equipment, data and pipelines
 | Data cleaning | `DS2-B` data directory cleaning (one row per cleanup) | `data/data-cleaning.csv` |
 | Pipelines | `HPC2-B` computing pipeline inventory | `data/pipelines.csv` |
 
-Leave a table empty if it doesn't apply to you. A separate group record (shared infrastructure, group cleanups, training, sharing) is coming.
+**Group record:**
+
+| Section | Criteria | Saved to |
+|---|---|---|
+| Training | `HPC3-B` green computing best practices (sessions and attendance) | `data/training.csv` |
+| Sharing and promotion | `G3-B` resources shared (kind `shared resource`); `G4-B` dissemination (kind `promotion`) | `data/sharing.csv` |
+| Data cleaning | `DS2-B` cleanups done as a group or with IT | `data/data-cleaning.csv` |
+
+Leave a table empty if it doesn't apply. Reference material, such as e-waste routes, which compute to use, and green computing tips, belongs in guide pages rather than records, so it can be published and read by others.
 
 ## Creating your record
 
@@ -39,9 +49,15 @@ Find your record with the issue search `is:issue label:personal-record author:@m
 
 Each person has one record. Opening a second one gets it closed with a link to the first.
 
+## The group record
+
+Create it once: **Issues → New issue → Green DiSC group record**, then comment `/save`. After that, anyone in the group adds to it the same way as to a personal record: edit the issue, add a row, comment `/save`. Keep earlier rows; together they are the history Green DiSC asks for.
+
+GitHub doesn't merge edits to an issue: if two people edit it at the same time, the last one to save wins. The issue's edit history (the *edited* link next to it) keeps the earlier version if a row goes missing.
+
 ## Who can save
 
-You can save your own record if you have **Write** access to the repository. People with the **Maintain** or **Admin** role can save anyone's record, so give the Green DiSC representative Maintain: they can then update the record of someone who has left. Anyone else who comments `/save` gets a reply explaining that nothing was saved.
+Anyone with **Write** access to the repository can save the group record and their own personal record. People with the **Maintain** or **Admin** role can save anyone's record, so give the Green DiSC representative Maintain: they can then update the record of someone who has left. Anyone else who comments `/save` gets a reply explaining that nothing was saved.
 
 ## When someone leaves
 

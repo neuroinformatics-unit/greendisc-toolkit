@@ -1,0 +1,61 @@
+name: Green DiSC group record
+description: Training, sharing and group cleanups, for the group's Green DiSC evidence. One per repository; anyone in the group can update it.
+title: "Green DiSC group record"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        What the **group** has done: training sessions, resources shared, promotion, and data cleanups done together. Leave a cell blank if you don't know; it's saved as `unknown` so it can be filled in later. Leave a whole table empty if it doesn't apply yet.
+
+        When you're done, click **Create**, then comment `/save` on the new issue. Keep the issue open: anyone in the group can add a row later by editing it and commenting `/save` again. If a group record already exists, edit that one instead of creating another.
+  - type: textarea
+    id: training
+    attributes:
+      label: Training
+      description: Green computing training sessions and resources. One row per session or resource; keep earlier rows.
+      value: |
+        <!--
+        Date: when it ran or was published, as YYYY-MM-DD, e.g. 2026-10-13
+        Title: what it was called
+        Format: e.g. talk, workshop, guide, induction
+        Attendees: how many people, e.g. 12, ~40
+        Materials: link to slides, recording or guide
+        Notes: optional, anything that helps
+        -->
+        | Date | Title | Format | Attendees | Materials | Notes |
+        |------|-------|--------|-----------|-----------|-------|
+        |      |       |        |           |           |       |
+  - type: textarea
+    id: sharing
+    attributes:
+      label: Sharing and promotion
+      description: Resources shared with other groups, and activities promoting Green DiSC. One row per activity; keep earlier rows.
+      value: |
+        <!--
+        Date: when, as YYYY-MM-DD
+        Kind: shared resource (material shared with other groups) or promotion (encouraging other groups to take part)
+        What: what was shared or done, e.g. induction slides, talk at department meeting
+        How: e.g. Green DiSC forum, mailing list, central team
+        People reached: roughly how many, e.g. 30, ~200
+        Link: where it can be found
+        Notes: optional, anything that helps
+        -->
+        | Date | Kind | What | How | People reached | Link | Notes |
+        |------|------|------|-----|----------------|------|-------|
+        |      |      |      |     |                |      |       |
+  - type: textarea
+    id: data-cleaning
+    attributes:
+      label: Data cleaning
+      description: Cleanups done as a group or with IT (personal cleanups go in your own record). Add a row per cleanup, keeping earlier rows.
+      value: |
+        <!--
+        Date: when, as YYYY-MM-DD, e.g. 2026-10-13
+        Scope: what was cleaned, e.g. shared project storage
+        Freed: storage freed, e.g. 40 GB, ~1 TB
+        Next: when the next cleanup is planned, as YYYY-MM-DD
+        Notes: optional, anything that helps
+        -->
+        | Date | Scope | Freed | Next | Notes |
+        |------|-------|-------|------|-------|
+        |      |       |       |      |       |
