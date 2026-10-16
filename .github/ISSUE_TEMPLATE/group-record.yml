@@ -5,7 +5,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Fill in the tables below, click **Create**, then comment `/save` on the new issue. If a group record already exists, edit that one instead of creating another.
+        Fill in the tables below, click **Create**, then comment `/save` on the new issue to save it to the group's data. If a group record already exists, edit that one instead of creating another.
   - type: textarea
     id: how-to
     attributes:
@@ -15,7 +15,8 @@ body:
         - Anyone in the group can add to this record. Add a row per session, activity or cleanup; copy a row to add more and keep each header row as it is.
         - Keep earlier rows: together they are the history Green DiSC asks for.
         - Leave a cell blank if you don't know; it's saved as `unknown` so it can be filled in later.
-        - When you're done, click **Save**, then comment `/save` on this issue. Keep the issue open.
+        - When you're done, click **Save**, then comment `/save` on this issue. The bot checks every row and copies the tables into the group's data files (`data/*.csv`), which are what the Green DiSC evidence and summary are built from. Editing the issue alone doesn't update them. If something needs fixing, the bot replies saying what, and nothing is saved until it's fixed.
+        - Keep the issue open, so it can be updated later.
   - type: textarea
     id: training
     attributes:
