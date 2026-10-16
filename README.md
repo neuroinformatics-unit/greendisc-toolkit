@@ -2,7 +2,7 @@
 
 A GitHub template that helps research groups and teams gather, organise and review evidence for [Green DiSC](https://github.com/Cambridge-Sustainable-Computing-Lab/greenDiSC) (Green Digital Science Certification). It does not replace Green DiSC's own submission process; it keeps the evidence that goes into it up to date.
 
-> **Status:** in development. Criteria syncing and hardware records work so far.
+> **Status:** in development. Criteria syncing, personal and group records, and starter guides are ready; review cycles and the public summary are not built yet.
 
 ## Quick start
 
