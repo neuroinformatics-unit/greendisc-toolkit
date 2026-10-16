@@ -51,13 +51,13 @@ Each person has one record. Opening a second one gets it closed with a link to t
 
 ## The group record
 
-Create it once: **Issues → New issue → Green DiSC group record**, then comment `/save`. After that, anyone in the group adds to it the same way as to a personal record: edit the issue, add a row, comment `/save`. Keep earlier rows; together they are the history Green DiSC asks for.
+Create it once: **Issues → New issue → Green DiSC group record**, then comment `/save`. After that, anyone in the group can add to it: edit the issue and add a row. A maintainer, such as the Green DiSC representative, checks new rows and comments `/save`; until then the issue is labelled `unsaved changes`. Keep earlier rows; together they are the history Green DiSC asks for.
 
 GitHub doesn't merge edits to an issue: if two people edit it at the same time, the last one to save wins. The issue's edit history (the *edited* link next to it) keeps the earlier version if a row goes missing.
 
 ## Who can save
 
-Anyone with **Write** access to the repository can save the group record and their own personal record. People with the **Maintain** or **Admin** role can save anyone's record, so give the Green DiSC representative Maintain: they can then update the record of someone who has left. Anyone else who comments `/save` gets a reply explaining that nothing was saved.
+Anyone with **Write** access can save their own personal record and edit the group record. Saving the group record, or someone else's personal record, needs the **Maintain** or **Admin** role, so give the Green DiSC representative Maintain: they check and save the group record, and can update the record of someone who has left. Anyone else who comments `/save` gets a reply explaining that nothing was saved.
 
 ## When someone leaves
 

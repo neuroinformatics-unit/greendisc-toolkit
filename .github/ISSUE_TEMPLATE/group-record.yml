@@ -1,5 +1,5 @@
 name: Green DiSC group record
-description: Training, sharing and group cleanups, for the group's Green DiSC evidence. One per repository; anyone in the group can update it.
+description: Training, sharing and group cleanups, for the group's Green DiSC evidence. One per repository; anyone in the group can add to it, and a maintainer saves it.
 title: "Green DiSC group record"
 body:
   - type: markdown
@@ -12,10 +12,10 @@ body:
       label: How to update this record
       description: Shown at the top of the issue, so it's there whenever the record is edited. You can leave it as it is.
       value: |
-        - Anyone in the group can add to this record. Add a row per session, activity or cleanup; copy a row to add more and keep each header row as it is.
+        - Anyone in the group can add to this record; a maintainer, such as the Green DiSC representative, checks and saves it. Add a row per session, activity or cleanup; copy a row to add more and keep each header row as it is.
         - Keep earlier rows: together they are the history Green DiSC asks for.
         - Leave a cell blank if you don't know; it's saved as `unknown` so it can be filled in later.
-        - When you're done, click **Save**, then comment `/save` on this issue. The bot checks every row and copies the tables into the group's data files (`data/*.csv`), which are what the Green DiSC evidence and summary are built from. Editing the issue alone doesn't update them. If something needs fixing, the bot replies saying what, and nothing is saved until it's fixed.
+        - When you're done, click **Save** on the issue, then comment `/save`. The bot checks every row and copies the tables into the group's data files (`data/*.csv`), which are what the Green DiSC evidence and summary are built from. Editing the issue alone doesn't update them. If something needs fixing, the bot replies saying what, and nothing is saved until it's fixed. If you can't save it yourself, the bot says so and your edits wait, marked `unsaved changes`, for a maintainer to save.
         - Keep the issue open, so it can be updated later.
   - type: textarea
     id: training

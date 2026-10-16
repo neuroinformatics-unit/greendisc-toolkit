@@ -43,16 +43,16 @@ Committing the change starts the criteria sync, which opens a pull request creat
 
 | Who | Role | Why |
 |---|---|---|
-| Members | **Write** | Create and save their own record, and add to the group record |
-| Green DiSC representative | **Maintain** | Save anyone's record, e.g. to update the record of someone who has left |
+| Members | **Write** | Create and save their own record, and add rows to the group record |
+| Green DiSC representative | **Maintain** | Save the group record, and anyone's record, e.g. to update the record of someone who has left |
 
 People with the **Read** role can see the records but can't save them. See [Who can save](records.md#who-can-save).
 
-A repository owned by a personal account has no Maintain role: every collaborator gets Write, and only the account owner can save other people's records. Use an organisation repository if the representative isn't the owner.
+A repository owned by a personal account has no Maintain role: every collaborator gets Write, and only the account owner can save the group record and other people's records. Use an organisation repository if the representative isn't the owner.
 
 ## 6. Create records
 
-Create the group record once (**Issues → New issue → Green DiSC group record**), and ask each member to create their own (**My Green DiSC record**). Comment `/save` on each. See [Recording evidence](records.md).
+The representative creates the group record once (**Issues → New issue → Green DiSC group record**), and asks each member to create their own (**My Green DiSC record**). Each record is saved by commenting `/save` on it. See [Recording evidence](records.md).
 
 ## What the workflows can do
 
