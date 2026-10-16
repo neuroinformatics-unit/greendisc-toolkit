@@ -5,14 +5,22 @@ body:
   - type: markdown
     attributes:
       value: |
-        List what **you** use or look after. Leave a cell blank if you don't know; it's saved as `unknown` so it can be filled in later. Leave a whole table empty if it doesn't apply to you.
-
-        When you're done, click **Create**, then comment `/save` on the new issue to save your record. Keep the issue open: to update it later (a new monitor, a dataset archived, a cleanup done), edit it and comment `/save` again. If you already have a record, edit that one instead of creating another.
+        Fill in the tables below, click **Create**, then comment `/save` on the new issue to save your record. If you already have a record, edit that one instead of creating another.
+  - type: textarea
+    id: how-to
+    attributes:
+      label: How to update this record
+      description: Shown at the top of the issue, so it's there whenever the record is edited. You can leave it as it is.
+      value: |
+        - List what you use, plus any shared group items you look after (e.g. a shared server, meeting-room screen, group dataset or pipeline). Each shared item goes in one person's record only. One row per item; copy a row to add more and keep each header row as it is.
+        - Leave a cell blank if you don't know; it's saved as `unknown` so it can be filled in later. Leave a whole table empty if it doesn't apply to you.
+        - Don't delete rows for things you no longer use: change their status instead.
+        - When you're done, click **Save**, then comment `/save` on this issue. Keep the issue open.
   - type: textarea
     id: hardware
     attributes:
       label: Hardware
-      description: One row per item. Copy a row to add more, and keep the header row as it is. Guidance is in the comment above the table, which stays visible whenever you edit the issue.
+      description: One row per item. Copy a row to add more, and keep the header row as it is. Column hints are in the comment above the table, which stays visible whenever you edit the issue.
       value: |
         <!--
         Type: what it is, e.g. laptop, desktop, monitor, tablet, external drive, docking station

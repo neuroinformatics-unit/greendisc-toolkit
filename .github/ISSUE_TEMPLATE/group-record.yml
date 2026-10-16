@@ -5,9 +5,17 @@ body:
   - type: markdown
     attributes:
       value: |
-        What the **group** has done: training sessions, resources shared, promotion, and data cleanups done together. Leave a cell blank if you don't know; it's saved as `unknown` so it can be filled in later. Leave a whole table empty if it doesn't apply yet.
-
-        When you're done, click **Create**, then comment `/save` on the new issue. Keep the issue open: anyone in the group can add a row later by editing it and commenting `/save` again. If a group record already exists, edit that one instead of creating another.
+        Fill in the tables below, click **Create**, then comment `/save` on the new issue. If a group record already exists, edit that one instead of creating another.
+  - type: textarea
+    id: how-to
+    attributes:
+      label: How to update this record
+      description: Shown at the top of the issue, so it's there whenever the record is edited. You can leave it as it is.
+      value: |
+        - Anyone in the group can add to this record. Add a row per session, activity or cleanup; copy a row to add more and keep each header row as it is.
+        - Keep earlier rows: together they are the history Green DiSC asks for.
+        - Leave a cell blank if you don't know; it's saved as `unknown` so it can be filled in later.
+        - When you're done, click **Save**, then comment `/save` on this issue. Keep the issue open.
   - type: textarea
     id: training
     attributes:
