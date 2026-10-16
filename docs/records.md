@@ -19,7 +19,7 @@ Each member keeps **one personal record issue** listing the equipment, data and 
 | Sharing and promotion | `G3-B` resources shared (kind `shared resource`); `G4-B` dissemination (kind `promotion`) | `data/sharing.csv` |
 | Data cleaning | `DS2-B` cleanups done as a group or with IT | `data/data-cleaning.csv` |
 
-Leave a table empty if it doesn't apply. Reference material, such as e-waste routes, which compute to use, and green computing tips, belongs in guide pages rather than records, so it can be published and read by others.
+Leave a table empty if it doesn't apply. Reference material, such as e-waste routes, which compute to use, and green computing tips, belongs in the [guides](../guides/README.md) rather than records, so it can be published and read by others.
 
 ## Creating your record
 
