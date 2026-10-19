@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       due:
-        description: Review meeting date (YYYY-MM-DD)
+        description: Review date (YYYY-MM-DD)
         required: true
         type: string
       name:
@@ -37,7 +37,7 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - uses: lochhh/actions/greendisc_toolkit/review_cycle@192db7d0050f276a9b3dcf7c4192ee5fdc8b0765 # greendisc-toolkit branch (untagged)
+      - uses: lochhh/actions/greendisc_toolkit/review_cycle@f7068bb5109fbf5ee41f622f0c39d7b3645ae70c # greendisc-toolkit branch (untagged)
         with:
           due: ${{ inputs.due }}
           name: ${{ inputs.name }}

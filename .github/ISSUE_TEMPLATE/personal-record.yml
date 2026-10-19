@@ -1,12 +1,12 @@
-name: My Green DiSC record
+name: Green DiSC personal record
 description: The equipment, data and pipelines you use, for the group's Green DiSC evidence. One record per person; edit it to keep it up to date.
-title: "Green DiSC record: "
+title: "Green DiSC personal record: "
 labels: ["personal-record"]
 body:
   - type: markdown
     attributes:
       value: |
-        Fill in the tables below, click **Create**, then comment `/save` on the new issue to save it to the group's data. If you already have a record, edit that one instead of creating another.
+        Each review creates a personal record for every member who doesn't have one yet, so you normally don't need this form. Use it only to start your record before the next review: add your name to the title, fill in the tables, click **Create**, then comment `/save` on the new issue. If you already have a record, edit that one instead.
   - type: textarea
     id: how-to
     attributes:

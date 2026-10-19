@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Created once, by the Green DiSC representative: fill in the tables below, click **Create**, then comment `/save` on the new issue to save it to the group's data. If a group record already exists, edit that one instead.
+        The first review creates the group record, so you normally don't need this form. Use it only to start the group record before the first review: fill in the tables, click **Create**, then comment `/save` on the new issue. If a group record already exists, edit that one instead.
   - type: textarea
     id: how-to
     attributes:
