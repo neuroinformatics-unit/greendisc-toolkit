@@ -1,28 +1,55 @@
 name: Green DiSC group record
-description: Training, sharing and group cleanups, for the group's Green DiSC evidence. One per repository; anyone in the group can add to it, and a maintainer saves it.
+description: Computing systems, training and sharing, for the group's Green DiSC evidence. One per repository; anyone in the group can add to it, and the Green DiSC representative saves it.
 title: "Green DiSC group record"
+labels: ["group-record"]
 body:
   - type: markdown
     attributes:
       value: |
-        Fill in the tables below, click **Create**, then comment `/save` on the new issue to save it to the group's data. If a group record already exists, edit that one instead of creating another.
+        Created once, by the Green DiSC representative: fill in the tables below, click **Create**, then comment `/save` on the new issue to save it to the group's data. If a group record already exists, edit that one instead.
   - type: textarea
     id: how-to
     attributes:
       label: How to update this record
       description: Shown at the top of the issue, so it's there whenever the record is edited. You can leave it as it is.
       value: |
-        - Anyone in the group can add to this record; a maintainer, such as the Green DiSC representative, checks and saves it. Add a row per session, activity or cleanup; copy a row to add more and keep each header row as it is.
+        - Anyone in the group can add to this record: add a row per system, session or activity.
         - Keep earlier rows: together they are the history Green DiSC asks for.
-        - Leave a cell blank if you don't know; it's saved as `unknown` so it can be filled in later.
-        - When you're done, click **Save** on the issue, then comment `/save`. The bot checks every row and copies the tables into the group's data files (`data/*.csv`), which are what the Green DiSC evidence and summary are built from. Editing the issue alone doesn't update them. If something needs fixing, the bot replies saying what, and nothing is saved until it's fixed. If you can't save it yourself, the bot says so and your edits wait, marked `unsaved changes`, for a maintainer to save.
-        - Keep the issue open, so it can be updated later.
+        - Leave a cell blank if you don't know, and write `n/a` if it doesn't apply.
+        - When you've added your rows, click **Save** on the issue. It's then marked `unsaved changes` for the Green DiSC representative to review.
+        - Do not close this issue: it's the group's ongoing record, updated before each review.
+
+        **For the Green DiSC representative:** review members' changes, then comment `/save`. The bot validates every row and copies the tables into the group's data files (`data/*.csv`), which the Green DiSC evidence and summary are built from.
+  - type: textarea
+    id: compute
+    attributes:
+      label: Compute infrastructure
+      description: The computing systems the group uses or could use, on-site and off-site. One row per system.
+      value: |
+        Evidence for `RG-HPC1-B` Computing infrastructure inventory.
+        <!--
+        System: e.g. institution HPC cluster, cloud provider, lab GPU server
+        Site: on-site or off-site
+        Provider: who runs it, e.g. the institution, a cloud company, our group
+        Region: where the data centre is (city or region); matters for how clean the electricity is
+        PUE: power usage effectiveness of the data centre, e.g. ~1.3 (lower is better); ask the computing team or provider
+        Electricity: e.g. grid, renewable tariff, on-site solar
+        Hardware: e.g. CPU and GPU nodes, 2 GPUs
+        Reason: for servers the group runs itself, why (e.g. special hardware, data that can't leave the building)
+        Status: in use or retired
+        Notes: optional, anything that helps
+        How to use these systems well: guides/green-computing.md in this repository.
+        -->
+        | System | Site | Provider | Region | PUE | Electricity | Hardware | Reason | Status | Notes |
+        |--------|------|----------|--------|-----|-------------|----------|--------|--------|-------|
+        |        |      |          |        |     |             |          |        |        |       |
   - type: textarea
     id: training
     attributes:
       label: Training
       description: Green computing training sessions and resources. One row per session or resource; keep earlier rows.
       value: |
+        Evidence for `RG-HPC3-B` Green computing best practices.
         <!--
         Date: when it ran or was published, as YYYY-MM-DD, e.g. 2026-10-13
         Title: what it was called
@@ -40,6 +67,7 @@ body:
       label: Sharing and promotion
       description: Resources shared with other groups, and activities promoting Green DiSC. One row per activity; keep earlier rows.
       value: |
+        Evidence for `RG-G3-B` Resources are shared with other groups (kind `shared resource`) and `RG-G4-B` Green DiSC dissemination (kind `promotion`).
         <!--
         Date: when, as YYYY-MM-DD
         Kind: shared resource (material shared with other groups) or promotion (encouraging other groups to take part)
@@ -52,19 +80,3 @@ body:
         | Date | Kind | What | How | People reached | Link | Notes |
         |------|------|------|-----|----------------|------|-------|
         |      |      |      |     |                |      |       |
-  - type: textarea
-    id: data-cleaning
-    attributes:
-      label: Data cleaning
-      description: Cleanups done as a group or with IT (personal cleanups go in your own record). Add a row per cleanup, keeping earlier rows.
-      value: |
-        <!--
-        Date: when, as YYYY-MM-DD, e.g. 2026-10-13
-        Scope: what was cleaned, e.g. shared project storage
-        Freed: storage freed, e.g. 40 GB, ~1 TB
-        Next: when the next cleanup is planned, as YYYY-MM-DD
-        Notes: optional, anything that helps
-        -->
-        | Date | Scope | Freed | Next | Notes |
-        |------|-------|-------|------|-------|
-        |      |       |       |      |       |

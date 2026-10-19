@@ -1,6 +1,7 @@
 name: My Green DiSC record
 description: The equipment, data and pipelines you use, for the group's Green DiSC evidence. One record per person; edit it to keep it up to date.
 title: "Green DiSC record: "
+labels: ["personal-record"]
 body:
   - type: markdown
     attributes:
@@ -12,22 +13,23 @@ body:
       label: How to update this record
       description: Shown at the top of the issue, so it's there whenever the record is edited. You can leave it as it is.
       value: |
-        - List what you use, plus any shared group items you look after (e.g. a shared server, meeting-room screen, group dataset or pipeline). Each shared item goes in one person's record only. One row per item; copy a row to add more and keep each header row as it is.
-        - Leave a cell blank if you don't know; it's saved as `unknown` so it can be filled in later. Leave a whole table empty if it doesn't apply to you.
+        - List what you use, plus any shared group items you look after (e.g. a shared server, meeting-room screen, group dataset or pipeline). Each shared item goes in one person's record only. One row per item.
+        - Leave a cell blank if you don't know, and write `n/a` if it doesn't apply. Leave a whole table empty if it doesn't apply to you.
         - Don't delete rows for things you no longer use: change their status instead.
-        - When your record is complete and up to date, click **Save** on the issue, then comment `/save`. The bot checks every row and copies the tables into the group's data files (`data/*.csv`), which are what the Green DiSC evidence and summary are built from. Editing the issue alone doesn't update them. If something needs fixing, the bot replies saying what, and nothing is saved until it's fixed.
-        - Keep the issue open, so it can be updated later.
+        - When your record is complete and up to date, click **Save** on the issue, then comment `/save`. The bot validates every row and copies the tables into the group's data files (`data/*.csv`), which the Green DiSC evidence and summary are built from.
+        - Do not close this issue: it's your record for as long as you're in the group, updated before each review.
   - type: textarea
     id: hardware
     attributes:
       label: Hardware
-      description: One row per item. Copy a row to add more, and keep the header row as it is. Column hints are in the comment above the table, which stays visible whenever you edit the issue.
+      description: One row per item. Column hints are in the comment above the table, which stays visible whenever you edit the issue.
       value: |
+        Evidence for `RG-01-B` Computing hardware inventory and `RG-02-B` Unused computing equipment inventory (items with status `unused`).
         <!--
         Type: what it is, e.g. laptop, desktop, monitor, tablet, external drive, docking station
         Purchased: year, e.g. 2023
         Status: in use, unused or disposed
-        Action: for unused or disposed items, what was or will be done (repurpose, donate, recycle, ...)
+        Action: for unused or disposed items, what was or will be done (repurpose, donate, recycle, ...). guides/e-waste.md in this repository lists where equipment can go.
         Location, Asset tag: optional. Leave blank if this repository is or could become public.
         Notes: optional, anything that helps (e.g. shared with a colleague, waiting for IT)
         -->
@@ -40,6 +42,7 @@ body:
       label: Data resources
       description: The main datasets you use or look after, including ones hosted elsewhere. One row per dataset.
       value: |
+        Evidence for `RG-DS1-B` Data resource inventory.
         <!--
         Name: what the dataset is called
         Hosted by: us (we store it) or external (someone else hosts it; the other columns can stay brief)
@@ -56,8 +59,9 @@ body:
     id: data-cleaning
     attributes:
       label: Data cleaning
-      description: Each time you clean up your data directories. Add a row per cleanup, keeping earlier rows.
+      description: Each time you clean up your data directories, or shared storage you look after. Add a row per cleanup, keeping earlier rows.
       value: |
+        Evidence for `RG-DS2-B` Data directory cleaning.
         <!--
         Date: when you cleaned up, as YYYY-MM-DD, e.g. 2026-10-13
         Scope: what you went through, e.g. my scratch space on the cluster
@@ -74,6 +78,7 @@ body:
       label: Pipelines
       description: The computing pipelines you run. One row per pipeline.
       value: |
+        Evidence for `RG-HPC2-B` Computing pipeline inventory.
         <!--
         Name: what the pipeline is called or does
         Runs on: e.g. the cluster's name, cloud, laptop

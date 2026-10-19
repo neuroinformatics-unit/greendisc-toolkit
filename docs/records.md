@@ -15,18 +15,18 @@ Each member keeps **one personal record issue** listing the equipment, data and 
 
 | Section | Criteria | Saved to |
 |---|---|---|
+| Compute infrastructure | `HPC1-B` computing infrastructure inventory | `data/compute.csv` |
 | Training | `HPC3-B` green computing best practices (sessions and attendance) | `data/training.csv` |
 | Sharing and promotion | `G3-B` resources shared (kind `shared resource`); `G4-B` dissemination (kind `promotion`) | `data/sharing.csv` |
-| Data cleaning | `DS2-B` cleanups done as a group or with IT | `data/data-cleaning.csv` |
 
-Leave a table empty if it doesn't apply. Reference material, such as e-waste routes, which compute to use, and green computing tips, belongs in the [guides](../guides/README.md) rather than records, so it can be published and read by others.
+Leave a table empty if it doesn't apply. Reference material, such as e-waste routes and green computing tips, belongs in the [guides](../guides/README.md) rather than records, so it can be published and read by others.
 
 ## Creating your record
 
 1. **Issues → New issue → My Green DiSC record.**
-2. Fill in the table: one row per item, copying a row to add more. The **How to update this record** section at the top explains the basics, and the comment above each table (visible when editing) says what each column expects. **Type** is free text; use the suggested names where they fit so items are counted together. Leave a cell blank if you don't know; it is saved as `unknown` so it can be filled in later. Every table also has an optional **Notes** column, which can stay blank.
-3. Click **Create**. The bot labels it `unsaved changes` and replies with how to save it.
-4. Comment `/save`. The bot checks every row, saves them, replies with a summary (including how many values are still `unknown`) and removes the `unsaved changes` label.
+2. Fill in the table: one row per item, copying a row to add more. The **How to update this record** section at the top explains the basics, and the comment above each table (visible when editing) says what each column expects. **Type** is free text; use the suggested names where they fit so items are counted together. Leave a cell blank if you don't know: it is saved as `unknown`, so missing data stays visible and can be filled in later. Write `n/a` if a cell doesn't apply, such as **Action** for an item still in use. Every table also has an optional **Notes** column, which can stay blank.
+3. Click **Create**.
+4. Comment `/save`. The bot checks every row, saves them, replies with a summary and removes the `unsaved changes` label.
 
 **Keep your record open.** It's yours for as long as you're in the group; it is only closed when you leave (see below).
 
@@ -38,6 +38,8 @@ Edit your record issue, change the table and comment `/save` again. Your saved r
 
 Editing the table adds the `unsaved changes` label, and a successful `/save` removes it. Until then your edits are not in the saved data, so the review can find unsaved records with the issue search `is:issue label:"unsaved changes"`.
 
+Before each review you'll get a **check-in** issue asking you to go over your record. Saving your record ticks it off; see [Running reviews](reviews.md).
+
 - **New item:** add a row.
 - **Item no longer used:** set its status to `unused` and say in **Action** what will happen to it.
 - **Item gone:** set its status to `disposed` and say in **Action** what happened (returned, donated, recycled, …). Keep the row: Green DiSC asks what happened to equipment.
@@ -47,11 +49,11 @@ Editing the table adds the `unsaved changes` label, and a successful `/save` rem
 
 Find your record with the issue search `is:issue label:personal-record author:@me`.
 
-Each person has one record. Opening a second one gets it closed with a link to the first.
+Each person has one record. Saving a second one gets a reply with a link to the first.
 
 ## The group record
 
-Create it once: **Issues → New issue → Green DiSC group record**, then comment `/save`. After that, anyone in the group can add to it: edit the issue and add a row. A maintainer, such as the Green DiSC representative, checks new rows and comments `/save`; until then the issue is labelled `unsaved changes`. Keep earlier rows; together they are the history Green DiSC asks for.
+Create it once: **Issues → New issue → Green DiSC group record**, then comment `/save`. After that, anyone in the group can add to it: edit the issue and add a row. The Green DiSC representative reviews members' changes and comments `/save`; until then the issue is labelled `unsaved changes`. Keep earlier rows; together they are the history Green DiSC asks for.
 
 GitHub doesn't merge edits to an issue: if two people edit it at the same time, the last one to save wins. The issue's edit history (the *edited* link next to it) keeps the earlier version if a row goes missing.
 

@@ -6,8 +6,18 @@ Practical ways to get the same research done with less computing, and so less en
 
 - **Test small first.** Debug on a small subset of the data, or a short run, before launching the full job.
 - **Ask for what you need.** Requesting more cores, memory or GPUs than a job uses leaves them idle, and they still draw power. Check what earlier runs actually used.
-- **Estimate the footprint** of big jobs with a calculator such as [Green Algorithms](https://calculator.green-algorithms.org/), using the details on our [computing page](compute.md).
-- **Pick the right system** for the job (see [Computing we use](compute.md)).
+- **Estimate the footprint** of big jobs with a calculator such as [Green Algorithms](https://calculator.green-algorithms.org/), using the system's PUE and region (see below).
+- **Pick the right system** for the job (see [Choosing where to run](#choosing-where-to-run)).
+
+## Choosing where to run
+
+The group record's *Compute infrastructure* table lists the systems the group uses, with what's known about their energy:
+
+- **PUE (power usage effectiveness):** the data centre's total energy divided by the energy used by the computers themselves. 1.0 would be perfect; lower is better.
+- **Region:** where the data centre is. The carbon intensity of electricity varies by country and region, and by time of day.
+- **Electricity:** where the power comes from, such as the grid, a renewable tariff or on-site solar.
+
+> **To fill in:** your group's rules of thumb, for example: test small jobs on the group server, run large ones on the cluster, and use the cloud only when the cluster can't do it.
 
 ## While it runs
 

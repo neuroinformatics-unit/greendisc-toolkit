@@ -1,9 +1,15 @@
 name: Sync Green DiSC criteria
 
 # Regenerates criteria.yml from upstream and opens a pull request if it changed.
-# Runs on demand, and whenever config.yml (track or criteria_ref) changes.
+# Runs on demand, whenever config.yml changes, and at the start of each review
+# (called from review.yml, which gets the pull request's number, if any).
 on:
   workflow_dispatch:
+  workflow_call:
+    outputs:
+      pr:
+        description: Number of the open sync pull request, if criteria changed
+        value: ${{ jobs.sync.outputs.pr }}
   push:
     branches: [main]
     paths: [config.yml]
@@ -16,6 +22,8 @@ jobs:
     permissions:
       contents: write # push the sync branch
       pull-requests: write # open the pull request
+    outputs:
+      pr: ${{ steps.pr.outputs.number }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
@@ -34,6 +42,7 @@ jobs:
           ref: ${{ steps.config.outputs.ref }}
 
       - name: Open pull request if criteria changed, else close a stale one
+        id: pr
         env:
           GH_TOKEN: ${{ github.token }}
           OLD_COMMIT: ${{ steps.config.outputs.old_commit }}
@@ -61,3 +70,4 @@ jobs:
           git push --force origin "$branch"
           gh pr create --title "Sync Green DiSC criteria" --body "$body" --head "$branch" \
             || gh pr edit "$branch" --body "$body"
+          echo "number=$(gh pr view "$branch" --json number -q .number)" >> "$GITHUB_OUTPUT"

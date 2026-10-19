@@ -7,3 +7,6 @@ track: RG
 # Upstream Green DiSC branch, tag or commit SHA to sync criteria from.
 # Leave on main to follow upstream; set a SHA to pin.
 criteria_ref: main
+
+# Tiers to open review issues for, as named in criteria.yml.
+tiers: [Bronze]
