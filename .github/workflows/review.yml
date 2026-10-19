@@ -28,8 +28,9 @@ jobs:
 
   review:
     needs: sync
-    # Start the review even if the sync fails (e.g. upstream changed format).
-    if: ${{ !cancelled() }}
+    # Start the review even if the sync fails (e.g. upstream changed format),
+    # but not in the template repository itself.
+    if: ${{ !cancelled() && !github.event.repository.is_template }}
     runs-on: ubuntu-latest
     permissions:
       contents: read # read config.yml and criteria.yml

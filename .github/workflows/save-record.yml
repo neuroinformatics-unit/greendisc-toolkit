@@ -14,7 +14,9 @@ jobs:
   record:
     # Issues only (not pull requests). Edits only flag unsaved changes; for
     # /save, this is a first filter and the action checks the commenter's role.
+    # Not in the template repository itself.
     if: >-
+      !github.event.repository.is_template &&
       !github.event.issue.pull_request &&
       (github.event_name == 'issues' ||
         (startsWith(github.event.comment.body, '/save') &&

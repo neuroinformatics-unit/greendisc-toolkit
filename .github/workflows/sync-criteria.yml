@@ -18,6 +18,8 @@ permissions: {}
 
 jobs:
   sync:
+    # Only in repositories created from the template, not in the template itself.
+    if: ${{ !github.event.repository.is_template }}
     runs-on: ubuntu-latest
     permissions:
       contents: write # push the sync branch
