@@ -1,6 +1,6 @@
 # Keeping criteria in sync with Green DiSC
 
-`criteria.yml` lists the Green DiSC criteria for your track: one entry per criterion with its ID, issue label, title and category. The review workflows read it to create one issue per criterion. It is generated, so don't edit it by hand.
+`criteria.yml` lists the Green DiSC criteria for your track: one entry per criterion with its ID, title and category, for every tier. It's a reference copy that shows when Green DiSC changes its criteria, and what the public summary will report against. It is generated, so don't edit it by hand.
 
 ## How it works
 
@@ -18,7 +18,7 @@ If upstream changes its file format, the workflow fails instead of writing a wro
 
 ## Running it
 
-It runs automatically whenever a change to `config.yml` reaches `main`, so changing `track` or `criteria_ref` keeps `criteria.yml` in step. You can also run it from the **Actions** tab → *Sync Green DiSC criteria* → *Run workflow*.
+It runs at the start of each review, and whenever a change to `config.yml` reaches `main`, so changing `track` or `criteria_ref` keeps `criteria.yml` in step. You can also run it from the **Actions** tab → *Sync Green DiSC criteria* → *Run workflow*.
 
 ## Settings
 

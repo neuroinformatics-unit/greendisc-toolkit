@@ -19,14 +19,17 @@ Each member keeps **one personal record issue** listing the equipment, data and 
 | Training | `HPC3-B` green computing best practices (sessions and attendance) | `data/training.csv` |
 | Sharing and promotion | `G3-B` resources shared (kind `shared resource`); `G4-B` dissemination (kind `promotion`) | `data/sharing.csv` |
 
-Leave a table empty if it doesn't apply. Reference material, such as e-waste routes and green computing tips, belongs in the [guides](../guides/README.md) rather than records, so it can be published and read by others.
+Leave a table empty if it doesn't apply. Every table in the issues also opens with the criteria it's evidence for.
 
-## Creating your record
+The remaining Research Group Bronze criteria aren't records: `G1-B` (representative) is the README's *Your Green DiSC representative* section, and `G2-B` (induction), `03-B` (e-waste) and the materials for `HPC3-B` are [guides](../guides/README.md), kept as pages so they can be published and read by others.
 
-1. **Issues → New issue → My Green DiSC record.**
-2. Fill in the table: one row per item, copying a row to add more. The **How to update this record** section at the top explains the basics, and the comment above each table (visible when editing) says what each column expects. **Type** is free text; use the suggested names where they fit so items are counted together. Leave a cell blank if you don't know: it is saved as `unknown`, so missing data stays visible and can be filled in later. Write `n/a` if a cell doesn't apply, such as **Action** for an item still in use. Every table also has an optional **Notes** column, which can stay blank.
-3. Click **Create**.
-4. Comment `/save`. The bot checks every row, saves them, replies with a summary and removes the `unsaved changes` label.
+## Your record
+
+Each review creates a personal record for every member who doesn't have one yet (everyone with the **Write**, **Maintain** or **Admin** role), titled `Green DiSC personal record: <username>` and assigned to them. Your review check-in links to it. To start before the next review, use **Issues → New issue → Green DiSC personal record**.
+
+1. Edit the issue and fill in the tables: one row per item. The **How to update this record** section at the top explains the basics, and the comment above each table (visible when editing) says what each column expects. **Type** is free text; use the suggested names where they fit so items are counted together. Leave a cell blank if you don't know: it is saved as `unknown`, so missing data stays visible and can be filled in later. Write `n/a` if a cell doesn't apply, such as **Action** for an item still in use. Every table also has an optional **Notes** column, which can stay blank.
+2. Click **Save** on the issue.
+3. Comment `/save`. The bot checks every row, saves them, replies with a summary and removes the `unsaved changes` label.
 
 **Keep your record open.** It's yours for as long as you're in the group; it is only closed when you leave (see below).
 
@@ -47,13 +50,13 @@ Before each review you'll get a **check-in** issue asking you to go over your re
 - **Pipeline no longer run:** set its status to `retired`. Keep the row.
 - **Cleanup done:** add a row to Data cleaning and keep the earlier ones; together they show how often you clean.
 
-Find your record with the issue search `is:issue label:personal-record author:@me`.
+Find your record with the issue search `is:issue label:personal-record assignee:@me`.
 
-Each person has one record. Saving a second one gets a reply with a link to the first.
+Each person has one record: the one assigned to them, or that they created. Saving a second one gets a reply with a link to the first. A record that is closed, for someone who left or doesn't need one, is never recreated by a review.
 
 ## The group record
 
-Create it once: **Issues → New issue → Green DiSC group record**, then comment `/save`. After that, anyone in the group can add to it: edit the issue and add a row. The Green DiSC representative reviews members' changes and comments `/save`; until then the issue is labelled `unsaved changes`. Keep earlier rows; together they are the history Green DiSC asks for.
+The first review creates it, assigned to the representative. After that, anyone in the group can add to it: edit the issue and add a row. The Green DiSC representative reviews members' changes and comments `/save`; until then the issue is labelled `unsaved changes`. Keep earlier rows; together they are the history Green DiSC asks for.
 
 GitHub doesn't merge edits to an issue: if two people edit it at the same time, the last one to save wins. The issue's edit history (the *edited* link next to it) keeps the earlier version if a row goes missing.
 
@@ -65,10 +68,26 @@ Anyone with **Write** access can save their own personal record and edit the gro
 
 The representative updates their record (each item's status, with an **Action** saying what happened, e.g. `returned to IT`), comments `/save`, then closes the issue. Closed records stay in the data; `/save` still works on them if something needs correcting later.
 
-## The CSV files
+A closed record isn't recreated by later reviews. If one was closed by mistake, or its owner rejoins the group, **reopen it**: they keep their history, and the next review gives them a check-in again.
 
-The bot is the only writer of `data/*.csv`. Each row has a `record` column with its issue number, which is how a later `/save` finds the rows to replace, so **don't edit the CSV files directly**: change the issue and `/save` instead, or your edit will be overwritten the next time that record is saved.
+## The data files
+
+The bot saves records to CSV files in `data/`, one per table. A file is created the first time a record with that table is saved, and every row has a `record` column with the issue number it came from.
+
+| File | Record | Table |
+|---|---|---|
+| `hardware.csv` | Personal | Hardware |
+| `data-resources.csv` | Personal | Data resources |
+| `data-cleaning.csv` | Personal | Data cleaning |
+| `pipelines.csv` | Personal | Pipelines |
+| `compute.csv` | Group | Compute infrastructure |
+| `training.csv` | Group | Training |
+| `sharing.csv` | Group | Sharing and promotion |
+
+The bot is the only writer of these files: a `/save` replaces that record's rows with the issue's current tables, so **don't edit the files directly**. Change the issue and `/save` instead, or your edit will be overwritten.
+
+**The one exception:** rows from a record that no longer exists, such as a deleted personal record, are never replaced, because nothing will save that record again. Each review lists them in the representative's check-in. Usually the representative deletes them by editing the CSV files directly. If a record was deleted by mistake, the next review creates a new one for its owner to fill in, and the old rows stay in the git history to copy from; delete them once the owner has re-entered their items.
 
 ## Privacy
 
-**Location** and **Asset tag** are optional, and owner names are implied by who created each record. Keep the repository private if you record them. The public summary only ever contains counts, never rows.
+**Location** and **Asset tag** are optional, and each personal record's title and assignee show whose it is. Keep the repository private if you record them. The public summary only ever contains counts, never rows.
