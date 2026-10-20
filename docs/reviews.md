@@ -24,7 +24,7 @@ Only people with the **Maintain** or **Admin** role can start a review; for anyo
    - **the group record:** check everything is up to date;
    - **the guides:** go over them, opening pull requests to make changes as needed, and review any open pull requests to update the guides. Anyone with Write access can approve and merge them.
 
-   Commenting `/save` on your personal record ticks its item and closes your check-in. Saving an unchanged record counts: it shows the record was looked at.
+   Commenting `/save` on your personal record ticks its item; only saving ticks it, so a tick given by hand is undone, with a reply pointing to `/save`. Saving an unchanged record counts: it shows the record was looked at. Tick the other items yourself as you do them: the check-in **closes by itself once everything is ticked**.
 4. **The representative's check-in.** The representative starts each review and gets this check-in; if someone else starts a review for them, reassign it to the representative. It has the same items as members' check-ins, plus:
    - review members' changes to the group record and comment `/save` on it;
    - check the README's *Your Green DiSC representative* section is up to date;
@@ -32,7 +32,7 @@ Only people with the **Maintain** or **Admin** role can start a review; for anyo
    - when the [guides](../guides/README.md) changed since the previous review: if you publish them elsewhere, such as your website, update that copy (the item links to the diff of each changed guide);
    - when the [data files](records.md#the-data-files) have rows from records that aren't open (for example, a deleted personal record): decide what to do with them. Usually that means deleting those rows.
 
-   Commenting `/save` on a record ticks its item; the representative ticks the rest and closes the check-in when they're done.
+   As on members' check-ins, saving a record ticks its item, the representative ticks the rest, and the check-in closes by itself once everything is ticked.
 
 On the **first review**, it also creates the records, as issues: **the group record**, assigned to the representative, and **a personal record for every member** (everyone with the **Write**, **Maintain** or **Admin** role). Later reviews create records only for people who have never had one, such as new members. A closed record is never recreated: close the record of anyone who doesn't need one, and reopen it if they rejoin or it was closed by mistake.
 
@@ -42,10 +42,11 @@ If a run fails part-way, run it again with the same date: it only adds what's mi
 
 ## Finishing a review
 
-- Open check-ins in the milestone show who hasn't gone over their record yet.
+- Open check-ins in the milestone show who hasn't finished going over their record, the group record and the guides. Ask them to, or save a member's record for them: Maintain and Admin can save anyone's record.
+- A check-in closed with items still unticked is reopened, unless the representative (Maintain or Admin) closed it. Close a check-in that can't be finished, e.g. for a member on leave, yourself.
 - The issue search `is:issue label:"unsaved changes"` finds records edited but not saved.
 - Open pull requests show suggested changes to the guides.
 
-Once everything on their check-in is done, the representative closes it and starts the next cycle. Some groups like to go through the criteria together at a meeting; [Recording evidence](records.md) and the [guides](../guides/README.md) say which criteria each part covers.
+Once everything on their check-in is ticked, the representative's check-in closes, and they start the next cycle when it's due. Some groups like to go through the criteria together at a meeting; [Recording evidence](records.md) and the [guides](../guides/README.md) say which criteria each part covers.
 
 Closed milestones, with their check-ins, are the record of past reviews.
