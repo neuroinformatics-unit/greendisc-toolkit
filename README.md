@@ -2,7 +2,7 @@
 
 A GitHub template that helps research groups gather, organise and review evidence for [Green DiSC](https://www.software.ac.uk/GreenDiSC), a Digital Sustainability Certification. It doesn't replace Green DiSC's own submission process; it keeps the evidence that goes into it up to date.
 
-> **Status:** in development. It covers the Research Group track at Bronze tier. Criteria syncing, records, review cycles and starter guides are ready; an evidence export and optional guide publishing are planned.
+> **Status:** in development. It covers the Research Group track at Bronze tier. Criteria syncing, records, review cycles, starter guides and the evidence export are ready; optional guide publishing is planned.
 
 ## Quick start
 
@@ -41,6 +41,7 @@ Members don't need to read the docs: their [check-in](../../issues?q=is%3Aissue+
 - [Setting up your repository](docs/setup.md)
 - [Recording evidence](docs/records.md): the records, which criteria each table is evidence for, and the data files
 - [Running reviews](docs/reviews.md)
+- [Submitting your evidence](docs/evidence.md): an optional export of the records for Green DiSC's auditors, without locations or names
 - [Guides](guides/README.md): starter pages on e-waste and green computing tips, to fill in and publish
 - [Keeping criteria in sync with Green DiSC](docs/criteria-sync.md)
 

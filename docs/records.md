@@ -100,4 +100,4 @@ The bot is the only writer of these files: a `/save` replaces that record's rows
 
 ## Privacy
 
-**Location** and **Asset tag** are optional, and each personal record's title and assignee show whose it is. Keep the repository private if you record them, and avoid publishing the data files as they are.
+**Location** and **Asset tag** are optional, and each personal record's title and assignee show whose it is. Keep the repository private if you record them, and avoid publishing the data files as they are: to share evidence, [export it](evidence.md).

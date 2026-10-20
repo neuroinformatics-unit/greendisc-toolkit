@@ -1,0 +1,30 @@
+name: Export Green DiSC evidence
+
+# Builds an anonymised evidence pack from the saved records (a CSV per
+# criterion, the guides and an index page, plus the review history) and
+# uploads it as an artifact of the run, to attach to a Green DiSC submission.
+# Optional: run it by hand when preparing a submission.
+on:
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  export:
+    # Not in the template repository itself.
+    if: ${{ !github.event.repository.is_template }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read # read data/ and guides/
+      issues: read # review history (milestones)
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - id: export
+        uses: lochhh/actions/greendisc_toolkit/export_evidence@18339e7d785a9a78ed04a7ed521b8c230ad7319e # greendisc-toolkit branch (untagged)
+
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: greendisc-evidence
+          path: ${{ steps.export.outputs.path }}
+          retention-days: 7 # long enough to download; the data stays in this repository
