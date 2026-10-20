@@ -1,0 +1,22 @@
+# Proposes updates to the actions the workflows use, as one pull request a month.
+# Every `uses:` is pinned to a commit SHA with its version in a comment; the pull
+# request updates both, and a person reviews and merges it.
+version: 2
+
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    # Wait a week after a release before proposing it, so a bad or compromised
+    # release is more likely to be caught first.
+    cooldown:
+      default-days: 7
+    groups:
+      actions:
+        patterns:
+          - "*"
+    # The Green DiSC toolkit's own actions have no tagged releases yet, so
+    # Dependabot can't propose versions for them; their pins are updated by hand.
+    ignore:
+      - dependency-name: "lochhh/actions/*"

@@ -47,7 +47,7 @@ Members don't need to read the docs: their [check-in](../../issues?q=is%3Aissue+
 
 ## How it works
 
-The workflows in `.github/workflows/` are thin wrappers around shared actions in [lochhh/actions](https://github.com/lochhh/actions/tree/greendisc-toolkit/greendisc_toolkit), pinned by commit SHA so that what runs can't change unnoticed. For now the pins are updated by hand; automatic update pull requests (Dependabot) will follow once the actions have tagged releases. The issue forms in `.github/ISSUE_TEMPLATE/` define the records, and the bot saves them to `data/`.
+The workflows in `.github/workflows/` are thin wrappers around shared actions in [lochhh/actions](https://github.com/lochhh/actions/tree/greendisc-toolkit/greendisc_toolkit), pinned by commit SHA so that what runs can't change unnoticed. Dependabot (`.github/dependabot.yml`) opens one pull request a month updating the pins of GitHub's own actions (checkout, upload-artifact), for someone to review and merge. The toolkit's own actions have no tagged releases yet, so their pins are updated by hand. The issue forms in `.github/ISSUE_TEMPLATE/` define the records, and the bot saves them to `data/`.
 
 ## Licence
 
