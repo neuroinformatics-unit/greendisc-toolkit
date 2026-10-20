@@ -54,14 +54,13 @@ Inventories and logs (hardware, data, pipelines, training, …) are recorded in 
 | Issues labelled `personal-record` | One per member: the hardware, data resources, data cleanups and pipelines they use or look after (including shared ones). The member edits it and comments `/save` to write the changes to the respective `data/*.csv` files. It stays open while the member is in the group: closing it removes its rows from the files. |
 | The issue labelled `group-record` | One for the group: computing infrastructure, training, and resources shared and promotional activities. Any member can edit it; the representative reviews the changes and comments `/save` to write the changes to the respective `data/*.csv` files. It stays open. |
 | `data/*.csv` | The saved records, one file per table, usually only written by the bot upon receiving a `/save` comment. |
-| Milestones and issues labelled `check-in` | The reviews. A check-in is a short-lived to-do list asking a member to go over their personal record, the group record, and the guides by the review date. Saving the personal record (a successful `/save`) ticks its item, members tick the rest, and the check-in closes by itself once everything is ticked. So each review's milestone shows who has finished, and closed milestones show when every past review happened. |
+| Milestones and issues labelled `check-in` | The reviews. A check-in is a short-lived to-do list asking a member to go over their personal record, the group record, and the guides by the review date. Saving the personal record (a successful `/save`) ticks its item, members tick the rest, and the check-in closes by itself once everything is ticked. So each review's milestone tracks each member's progress, and closed milestones show when every past review happened. |
 | `guides/` | Reference pages (e-waste, green computing), edited by pull request. |
 | `criteria.yml` | The Green DiSC criteria for your track, synced from upstream. |
 | `config.yml` | Your track, and which upstream version of the criteria to follow. |
 | `.github/ISSUE_TEMPLATE/` | The forms the records are created from. |
-| `.github/workflows/` | Save records, start reviews, sync criteria, export evidence. |
-
-The workflows are thin wrappers around shared actions in [lochhh/actions](https://github.com/lochhh/actions/tree/greendisc-toolkit/greendisc_toolkit). Dependabot (`.github/dependabot.yml`) opens one pull request a month updating the pins of GitHub's own actions (checkout, upload-artifact), for someone to review and merge. The toolkit's own actions have no tagged releases yet, so their pins are updated by hand.
+| `.github/workflows/` | The automation: saving records on `/save` (and tidying check-ins), starting reviews, syncing the criteria, and exporting the evidence. Each is a thin wrapper around a shared action in [lochhh/actions](https://github.com/lochhh/actions/tree/greendisc-toolkit/greendisc_toolkit). |
+| `.github/dependabot.yml` | Opens one pull request a month updating the pins of GitHub's own actions, to review and merge. The toolkit's own actions have no tagged releases yet, so their pins are updated by hand. |
 
 ## Licence
 
