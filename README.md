@@ -2,7 +2,7 @@
 
 A GitHub template that helps research groups gather, organise and review evidence for [Green DiSC](https://www.software.ac.uk/GreenDiSC), a Digital Sustainability Certification. It doesn't replace Green DiSC's own submission process; it keeps the evidence that goes into it up to date.
 
-> **Status:** in development. It covers the Research Group track at Bronze tier. Criteria syncing, records, review cycles and starter guides are ready; the public summary is not built yet.
+> **Status:** in development. It covers the Research Group track at Bronze tier. Criteria syncing, records, review cycles and starter guides are ready; an evidence export and optional guide publishing are planned.
 
 ## Quick start
 
@@ -34,7 +34,7 @@ Members don't need to read the docs: their [check-in](../../issues?q=is%3Aissue+
 
 - sets up the repository and keeps the section above up to date;
 - starts each review, and works through the representative's check-in, which includes reviewing and saving the group record;
-- manages who's in the group: gives new members Write access (the next review creates their record), and when someone leaves, updates and closes their record, then removes their access.
+- manages who's in the group: gives new members Write access (the next review creates their record), and when someone leaves, hands over their shared items, closes their record (which removes its rows from the data) and removes their access; see [When someone leaves](docs/records.md#when-someone-leaves).
 
 ## Documentation
 

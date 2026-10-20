@@ -1,10 +1,10 @@
 name: Save Green DiSC records
 
-# Welcomes new record issues, flags edits not yet saved, and saves records to
-# data/*.csv when someone comments /save.
+# Flags edits not yet saved, saves records to data/*.csv when someone comments
+# /save, and removes a record's rows when it is closed (its owner left).
 on:
   issues:
-    types: [edited]
+    types: [edited, closed]
   issue_comment:
     types: [created]
 
@@ -12,8 +12,9 @@ permissions: {}
 
 jobs:
   record:
-    # Issues only (not pull requests). Edits only flag unsaved changes; for
-    # /save, this is a first filter and the action checks the commenter's role.
+    # Issues only (not pull requests). Edits only flag unsaved changes, and
+    # closing a record removes its rows; for /save, this is a first filter and
+    # the action checks the commenter's role.
     # Not in the template repository itself.
     if: >-
       !github.event.repository.is_template &&
@@ -28,4 +29,4 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - uses: lochhh/actions/greendisc_toolkit/save_record@f7068bb5109fbf5ee41f622f0c39d7b3645ae70c # greendisc-toolkit branch (untagged)
+      - uses: lochhh/actions/greendisc_toolkit/save_record@2a362293bed4f5cb07d8ed88c2d8ab9de06e8528 # greendisc-toolkit branch (untagged)

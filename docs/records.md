@@ -27,11 +27,11 @@ The remaining Research Group Bronze criteria aren't records: `G1-B` (representat
 
 Each review creates a personal record for every member who doesn't have one yet (everyone with the **Write**, **Maintain** or **Admin** role), titled `Green DiSC personal record: <username>` and assigned to them. Your review check-in links to it. To start before the next review, use **Issues → New issue → Green DiSC personal record**.
 
-1. Edit the issue and fill in the tables: one row per item. The **How to update this record** section at the top explains the basics, and the comment above each table (visible when editing) says what each column expects. **Type** is free text; use the suggested names where they fit so items are counted together. Leave a cell blank if you don't know: it is saved as `unknown`, so missing data stays visible and can be filled in later. Write `n/a` if a cell doesn't apply, such as **Action** for an item still in use. Every table also has an optional **Notes** column, which can stay blank.
+1. Edit the issue and fill in the tables: one row per item. The **How to update this record** section at the top explains the basics, and the comment above each table (visible when editing) says what each column expects. **Type** is free text; use the suggested names where they fit so items are counted together. One rule for every cell: **leave it blank if you don't know**, and it is saved as `unknown`, so missing data stays visible and can be filled in later; **type `-` if it doesn't apply**, such as **Action** for an item still in use (`n/a` works too). Optional columns (**Notes** in every table, **Location** and **Asset tag**) can stay blank.
 2. Click **Save** on the issue.
 3. Comment `/save`. The bot checks every row, saves them, replies with a summary and removes the `unsaved changes` label.
 
-**Keep your record open.** It's yours for as long as you're in the group; it is only closed when you leave (see below).
+**Keep your record open.** It's yours for as long as you're in the group; it is only closed when you leave (see [When someone leaves](#when-someone-leaves)), and closing it removes its rows from the data.
 
 If something is wrong (e.g. `broken` as a status, or `22` as a year), nothing is saved: the bot replies listing each problem by row and column. Edit the issue, fix them and comment `/save` again.
 
@@ -66,9 +66,16 @@ Anyone with **Write** access can save their own personal record and edit the gro
 
 ## When someone leaves
 
-The representative updates their record (each item's status, with an **Action** saying what happened, e.g. `returned to IT`), comments `/save`, then closes the issue. Closed records stay in the data; `/save` still works on them if something needs correcting later.
+The data files hold what the group has **now**, so a leaver's rows go when they leave. Before their last day, the leaver (or the representative):
 
-A closed record isn't recreated by later reviews. If one was closed by mistake, or its owner rejoins the group, **reopen it**: they keep their history, and the next review gives them a check-in again.
+1. **Hands over shared items.** For each shared item they looked after (a group server, meeting-room screen, shared dataset or pipeline), move its row to the new caretaker's record; the caretaker comments `/save` on theirs. Without this, the item disappears from the evidence.
+2. **Optionally records what happened to their own items** (status `disposed`, **Action** e.g. `returned to IT`) and comments `/save`, if the group wants that in the history. It isn't needed for the evidence: returned equipment is in the institution's own records.
+3. **Closes their record.** The bot removes its rows from `data/` and replies with what was removed. The rows stay in the git history.
+4. **Loses repository access:** the representative removes them, so later reviews don't count them as a member.
+
+A closed record isn't recreated by later reviews. If one was closed by mistake, or its owner rejoins the group, **reopen it and comment `/save`**: its rows come back, and the next review gives them a check-in again.
+
+This only applies to leavers. Members keep every row in their record and change its status instead (see [Keeping it up to date](#keeping-it-up-to-date)).
 
 ## The data files
 
@@ -86,8 +93,8 @@ The bot saves records to CSV files in `data/`, one per table. A file is created 
 
 The bot is the only writer of these files: a `/save` replaces that record's rows with the issue's current tables, so **don't edit the files directly**. Change the issue and `/save` instead, or your edit will be overwritten.
 
-**The one exception:** rows from a record that no longer exists, such as a deleted personal record, are never replaced, because nothing will save that record again. Each review lists them in the representative's check-in. Usually the representative deletes them by editing the CSV files directly. If a record was deleted by mistake, the next review creates a new one for its owner to fill in, and the old rows stay in the git history to copy from; delete them once the owner has re-entered their items.
+**The one exception:** rows from a record that isn't open, such as a deleted personal record or one closed before closing removed rows, are never replaced, because nothing will save that record again. Each review lists them in the representative's check-in. Usually the representative deletes them by editing the CSV files directly. If a record was closed by mistake, reopen it and comment `/save` instead. If one was deleted by mistake, the next review creates a new one for its owner to fill in, and the old rows stay in the git history to copy from; delete them once the owner has re-entered their items.
 
 ## Privacy
 
-**Location** and **Asset tag** are optional, and each personal record's title and assignee show whose it is. Keep the repository private if you record them. The public summary only ever contains counts, never rows.
+**Location** and **Asset tag** are optional, and each personal record's title and assignee show whose it is. Keep the repository private if you record them, and don't publish the data files as they are.

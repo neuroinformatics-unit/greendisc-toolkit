@@ -14,10 +14,10 @@ body:
       description: Shown at the top of the issue, so it's there whenever the record is edited. You can leave it as it is.
       value: |
         - List what you use, plus any shared group items you look after (e.g. a shared server, meeting-room screen, group dataset or pipeline). Each shared item goes in one person's record only. One row per item.
-        - Leave a cell blank if you don't know, and write `n/a` if it doesn't apply. Leave a whole table empty if it doesn't apply to you.
+        - Leave a cell blank if you don't know: it's saved as `unknown`, so the gap stays visible. Type `-` if it doesn't apply. Optional columns (Notes, Location, Asset tag) can stay blank. Leave a whole table empty if it doesn't apply to you.
         - Don't delete rows for things you no longer use: change their status instead.
-        - When your record is complete and up to date, click **Save** on the issue, then comment `/save`. The bot validates every row and copies the tables into the group's data files (`data/*.csv`), which the Green DiSC evidence and summary are built from.
-        - Do not close this issue: it's your record for as long as you're in the group, updated before each review.
+        - When your record is complete and up to date, click **Save** on the issue, then comment `/save`. The bot validates every row and copies the tables into the group's data files (`data/*.csv`), the evidence for your Green DiSC submission.
+        - Keep this issue open: it's your record for as long as you're in the group, updated before each review. Close it only when you leave: that removes its rows from the data files (see *When someone leaves* in docs/records.md).
   - type: textarea
     id: hardware
     attributes:
@@ -29,7 +29,7 @@ body:
         Type: what it is, e.g. laptop, desktop, monitor, tablet, external drive, docking station
         Purchased: year, e.g. 2023
         Status: in use, unused or disposed
-        Action: for unused or disposed items, what was or will be done (repurpose, donate, recycle, ...). guides/e-waste.md in this repository lists where equipment can go.
+        Action: for unused or disposed items, what was or will be done (repurpose, donate, recycle, ...); `-` for items in use. guides/e-waste.md in this repository lists where equipment can go.
         Location, Asset tag: optional. Leave blank if this repository is or could become public.
         Notes: optional, anything that helps (e.g. shared with a colleague, waiting for IT)
         -->
@@ -46,7 +46,7 @@ body:
         <!--
         Name: what the dataset is called
         Hosted by: us (we store it) or external (someone else hosts it; the other columns can stay brief)
-        Location: where it's stored, e.g. cluster, cloud bucket, lab server. Leave blank if this repository is or could become public.
+        Location: optional, where it's stored, e.g. cluster, cloud bucket, lab server. Leave blank if this repository is or could become public.
         Size: e.g. 500 GB, ~3 TB
         If lost: easy to replace, hard to replace or irreplaceable
         Status: in use, archived or deleted

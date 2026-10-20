@@ -1,6 +1,6 @@
 # Keeping criteria in sync with Green DiSC
 
-`criteria.yml` lists the Green DiSC criteria for your track: one entry per criterion with its ID, title and category, for every tier. It's a reference copy that shows when Green DiSC changes its criteria, and what the public summary will report against. It is generated, so don't edit it by hand.
+`criteria.yml` lists the Green DiSC criteria for your track: one entry per criterion with its ID, title and category, for every tier. It's a reference copy that shows when Green DiSC changes its criteria. It is generated, so don't edit it by hand.
 
 ## How it works
 
