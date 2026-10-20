@@ -29,4 +29,4 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - uses: lochhh/actions/greendisc_toolkit/save_record@18339e7d785a9a78ed04a7ed521b8c230ad7319e # greendisc-toolkit branch (untagged)
+      - uses: lochhh/actions/greendisc_toolkit/save_record@3d362b94f8662f5ece48130010f50ec4a65e5a0e # greendisc-toolkit branch (untagged)

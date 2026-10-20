@@ -2,7 +2,7 @@
 
 A GitHub template that helps research groups gather, organise and review evidence for [Green DiSC](https://www.software.ac.uk/GreenDiSC), a Digital Sustainability Certification. It doesn't replace Green DiSC's own submission process; it keeps the evidence that goes into it up to date.
 
-> **Status:** in development. It covers the Research Group track at Bronze tier. Criteria syncing, records, review cycles, starter guides and the evidence export are ready; optional guide publishing is planned.
+> **Status:** in development. It covers the Research Group track at Bronze tier. Criteria syncing, records, review cycles, starter guides and the evidence export are ready.
 
 ## Quick start
 
