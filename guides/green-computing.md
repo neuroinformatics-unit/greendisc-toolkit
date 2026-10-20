@@ -55,6 +55,7 @@ Learn:
 - [Green Algorithms](https://www.green-algorithms.org/): talks, guidance and tools for sustainable computational research.
 - [GREENER principles for environmentally sustainable computational science](https://doi.org/10.1038/s43588-023-00461-y) (Lannelongue et al., *Nature Computational Science*, 2023): a framework for research groups and institutions.
 - [Green Software Practitioner](https://learn.greensoftware.foundation/): a free short course from the [Green Software Foundation](https://greensoftware.foundation/).
+- [Green HPC System Use](https://epcced.github.io/2025-07-02_GreenHPC_UCL/): Workshop material on green HPC use.
 
 Share and ask:
 
