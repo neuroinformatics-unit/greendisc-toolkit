@@ -29,7 +29,7 @@ Only people with the **Maintain** or **Admin** role can start a review; for anyo
    - review members' changes to the group record and comment `/save` on it;
    - check the README's *Your Green DiSC representative* section is up to date;
    - when the criteria sync opened a pull request: check the upstream changes and merge it;
-   - when the [guides](../guides/README.md) changed since the previous review: if you publish them elsewhere, such as your website, update that copy (the item links to the changes);
+   - when the [guides](../guides/README.md) changed since the previous review: if you publish them elsewhere, such as your website, update that copy (the item links to the diff of each changed guide);
    - when the [data files](records.md#the-data-files) have rows from records that aren't open (for example, a deleted personal record): decide what to do with them. Usually that means deleting those rows.
 
    Commenting `/save` on a record ticks its item; the representative ticks the rest and closes the check-in when they're done.
