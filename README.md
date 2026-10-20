@@ -1,18 +1,16 @@
 # Green DiSC toolkit
 
-A GitHub template that helps research groups gather, organise and review evidence for [Green DiSC](https://www.software.ac.uk/GreenDiSC), a Digital Sustainability Certification. It doesn't replace Green DiSC's own submission process; it keeps the evidence that goes into it up to date.
+A GitHub template that helps research groups gather, organise and review evidence for [Green DiSC](https://www.software.ac.uk/GreenDiSC), a Digital Sustainability Certification. It doesn't replace Green DiSC's own submission process; it keeps the evidence that goes into it up to date, and can export it, without locations or names, to attach to your submission.
 
 > **Status:** in development. It covers the Research Group track at Bronze tier. Criteria syncing, records, review cycles, starter guides and the evidence export are ready.
 
-## Quick start
+## Get started
 
 For the Green DiSC representative, who sets the repository up:
 
 1. Click **Use this template** to create your own repository (**private** if you will record locations or owners).
 2. Follow [Setting up your repository](docs/setup.md): allow the toolkit's actions, choose your track in `config.yml` (this syncs the criteria), add people and name your representative below.
 3. Start your first review: **Actions → Start Green DiSC review**, with the date the review should be done by. This creates the group record, a personal record for each member and everyone's check-in, as [GitHub issues](../../issues). See [Running reviews](docs/reviews.md).
-
-Members don't need to read the docs: their [check-in](../../issues?q=is%3Aissue+is%3Aopen+label%3Acheck-in) and records say what to do.
 
 ## Your Green DiSC representative
 
@@ -24,17 +22,19 @@ Members don't need to read the docs: their [check-in](../../issues?q=is%3Aissue+
 
 ## Who does what
 
+**The Green DiSC representative** (Maintain role):
+
+- sets up the repository and keeps [Your Green DiSC representative](#your-green-disc-representative) above up to date;
+- starts each review and works through the representative's check-in: reviewing and saving the group record, and, occasionally, merging the criteria sync pull request, updating any published copy of the guides, and tidying data rows left by deleted records (see [Running reviews](docs/reviews.md));
+- manages who's in the group: gives new members Write access (the next review creates their record), and when someone leaves, hands over their shared items, closes their record (which removes its rows from the data) and removes their access; see [When someone leaves](docs/records.md#when-someone-leaves);
+- reviews and merges Dependabot's monthly pull request updating the workflows' action pins;
+- when applying, [exports the evidence](docs/evidence.md) and attaches it to the submission, with the representative's profile (`G1-B`) and the onboarding material (`G2-B`).
+
 **Members** (Write role) work through the check-in they get before each review:
 
 - update their personal record (what they use, plus any shared items they look after, and their data cleanups), then comment `/save`;
-- add anything new to the group record: computing systems, training, shared material and promotion;
-- go over the [guides](guides/README.md), opening pull requests for changes and reviewing each other's.
-
-**The Green DiSC representative** (Maintain role):
-
-- sets up the repository and keeps the section above up to date;
-- starts each review, and works through the representative's check-in, which includes reviewing and saving the group record;
-- manages who's in the group: gives new members Write access (the next review creates their record), and when someone leaves, hands over their shared items, closes their record (which removes its rows from the data) and removes their access; see [When someone leaves](docs/records.md#when-someone-leaves).
+- add anything new to the group record: computing systems, training, shared material and promotional activities;
+- go over the [guides](guides/README.md), opening pull requests for changes and reviewing others' pull requests.
 
 ## Documentation
 
@@ -47,7 +47,21 @@ Members don't need to read the docs: their [check-in](../../issues?q=is%3Aissue+
 
 ## How it works
 
-The workflows in `.github/workflows/` are thin wrappers around shared actions in [lochhh/actions](https://github.com/lochhh/actions/tree/greendisc-toolkit/greendisc_toolkit), pinned by commit SHA so that what runs can't change unnoticed. Dependabot (`.github/dependabot.yml`) opens one pull request a month updating the pins of GitHub's own actions (checkout, upload-artifact), for someone to review and merge. The toolkit's own actions have no tagged releases yet, so their pins are updated by hand. The issue forms in `.github/ISSUE_TEMPLATE/` define the records, and the bot saves them to `data/`.
+Inventories and logs (hardware, data, pipelines, training, …) are recorded in GitHub issues and saved to files by a workflow; reference material (e-waste routes, green computing tips) lives in guide pages. Both are brought up to date at every review. Where everything lives:
+
+| Where | What |
+|---|---|
+| Issues labelled `personal-record` | One per member: the hardware, data resources, data cleanups and pipelines they use or look after (including shared ones). The member edits it and comments `/save` to write the changes to the respective `data/*.csv` files. It stays open while the member is in the group: closing it removes its rows from the files. |
+| The issue labelled `group-record` | One for the group: computing infrastructure, training, and resources shared and promotional activities. Any member can edit it; the representative reviews the changes and comments `/save` to write the changes to the respective `data/*.csv` files. It stays open. |
+| `data/*.csv` | The saved records, one file per table, usually only written by the bot upon receiving a `/save` comment. |
+| Milestones and issues labelled `check-in` | The reviews. A check-in is a short-lived to-do list asking a member to go over their personal record, the group record, and the guides by the review date. A successful `/save` on a member's personal record ticks it off and closes their check-in (the representative closes theirs by hand), so each review's milestone shows who has gone over their record, and closed milestones show when every past review happened. |
+| `guides/` | Reference pages (e-waste, green computing), edited by pull request. |
+| `criteria.yml` | The Green DiSC criteria for your track, synced from upstream. |
+| `config.yml` | Your track, and which upstream version of the criteria to follow. |
+| `.github/ISSUE_TEMPLATE/` | The forms the records are created from. |
+| `.github/workflows/` | Save records, start reviews, sync criteria, export evidence. |
+
+The workflows are thin wrappers around shared actions in [lochhh/actions](https://github.com/lochhh/actions/tree/greendisc-toolkit/greendisc_toolkit), pinned by commit SHA so that what runs can't change unnoticed. Dependabot (`.github/dependabot.yml`) opens one pull request a month updating the pins of GitHub's own actions (checkout, upload-artifact), for someone to review and merge. The toolkit's own actions have no tagged releases yet, so their pins are updated by hand.
 
 ## Licence
 
