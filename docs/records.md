@@ -21,7 +21,10 @@ Each member keeps **one personal record issue** listing the equipment, data and 
 
 Leave a table empty if it doesn't apply. Every table in the issues also opens with the criteria it's evidence for.
 
-The remaining Research Group Bronze criteria aren't records: `G1-B` (representative) is the README's *Your Green DiSC representative* section, and `G2-B` (induction), `03-B` (e-waste) and the materials for `HPC3-B` are [guides](../guides/README.md), kept as pages so they can be published and read by others.
+The remaining Research Group Bronze criteria aren't records:
+
+- `03-B` (e-waste) and the materials for `HPC3-B` are [guides](../guides/README.md), kept as pages so they can be published and read by others.
+- `G1-B` (representative) and `G2-B` (induction) need evidence which usually lives outside this repository: the representative's profile page or role description, and your onboarding material (which can link the green computing and e-waste guides). The README's *Your Green DiSC representative* section tells members who the representative is and can link that evidence.
 
 ## Your record
 
@@ -97,4 +100,4 @@ The bot is the only writer of these files: a `/save` replaces that record's rows
 
 ## Privacy
 
-**Location** and **Asset tag** are optional, and each personal record's title and assignee show whose it is. Keep the repository private if you record them, and don't publish the data files as they are.
+**Location** and **Asset tag** are optional, and each personal record's title and assignee show whose it is. Keep the repository private if you record them, and avoid publishing the data files as they are.

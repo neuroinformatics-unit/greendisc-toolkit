@@ -16,7 +16,7 @@ Members don't need to read the docs: their [check-in](../../issues?q=is%3Aissue+
 
 ## Your Green DiSC representative
 
-> **To fill in:** your representative's name, how to contact them, and a link to their profile or role description. Update it when the representative changes: it's evidence for `G1-B`.
+> **To fill in:** your representative's name, how to contact them, and a link to their profile or role description. Update it when the representative changes.
 
 - **Name:**
 - **Contact:**
