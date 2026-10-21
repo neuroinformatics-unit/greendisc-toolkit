@@ -8,12 +8,12 @@ Click **Use this template → Create a new repository**. Make it **private** if 
 
 ## 2. Allow the toolkit's actions
 
-The workflows use GitHub's own `actions/checkout` and `actions/setup-python`, and the toolkit's shared actions in `lochhh/actions`.
+The workflows use GitHub's own `actions/checkout` and `actions/setup-python`, and the toolkit's shared actions in `neuroinformatics-unit/actions`.
 
 If your organisation restricts which actions can run (**Organisation settings → Actions → General → Policies**), an organisation owner needs to:
 
 - tick **Allow actions created by GitHub**, and
-- add `lochhh/actions@*, lochhh/actions/*` to the allowed actions and reusable workflows (the toolkit's actions are in subfolders of that repository).
+- add `neuroinformatics-unit/actions@*, neuroinformatics-unit/actions/*` to the allowed actions and reusable workflows (the toolkit's actions are in subfolders of that repository).
 
 If the policy allows all actions, there is nothing to do. The same setting exists per repository under **Settings → Actions → General**, if your organisation lets repositories choose.
 

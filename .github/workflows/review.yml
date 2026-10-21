@@ -38,7 +38,7 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - uses: lochhh/actions/greendisc_toolkit/review_cycle@28571b25525adc549b42c77896bdad56c00d382e # greendisc-toolkit branch (untagged)
+      - uses: neuroinformatics-unit/actions/greendisc_toolkit/review_cycle@2074bc642cccfe12d3299a247e4e2ef74fc514fc # greendisc-6-dependabot (pre-release)
         with:
           due: ${{ inputs.due }}
           name: ${{ inputs.name }}

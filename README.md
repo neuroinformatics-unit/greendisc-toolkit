@@ -60,7 +60,7 @@ Inventories and logs (hardware, data, pipelines, training, …) are recorded in 
 | `criteria.yml` | The Green DiSC criteria for your track, synced from upstream. |
 | `config.yml` | Your track, and which upstream version of the criteria to follow. |
 | `.github/ISSUE_TEMPLATE/` | The forms the records are created from. |
-| `.github/workflows/` | The automation: saving records on `/save` (and tidying check-ins), starting reviews, syncing the criteria, and exporting the evidence. Each is a thin wrapper around a shared action in [lochhh/actions](https://github.com/lochhh/actions/tree/greendisc-toolkit/greendisc_toolkit). |
+| `.github/workflows/` | The automation: saving records on `/save` (and tidying check-ins), starting reviews, syncing the criteria, and exporting the evidence. Each is a thin wrapper around a shared action in [neuroinformatics-unit/actions](https://github.com/neuroinformatics-unit/actions/tree/main/greendisc_toolkit). |
 | `.github/dependabot.yml` | Opens one pull request a month updating the pins of GitHub's own actions, to review and merge. The toolkit's own actions have no tagged releases yet, so their pins are updated by hand; see [Updating the toolkit](docs/updating.md). |
 
 ## Licence

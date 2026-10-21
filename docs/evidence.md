@@ -12,7 +12,7 @@ Green DiSC applications are a submission form plus supporting files, read by an 
 Or, from a local clone, with [uv](https://docs.astral.sh/uv/) installed:
 
 ```sh
-uv run --script https://raw.githubusercontent.com/lochhh/actions/<sha>/greendisc_toolkit/export_evidence/export_evidence.py --with-reviews
+uv run --script https://raw.githubusercontent.com/neuroinformatics-unit/actions/<sha>/greendisc_toolkit/export_evidence/export_evidence.py --with-reviews
 ```
 
 This writes `greendisc-evidence/` in the current directory. `--with-reviews` adds the review history and needs the [GitHub CLI](https://cli.github.com/), logged in; leave it out otherwise.
@@ -37,7 +37,7 @@ By default, **Location** and **Asset tag** are left out. To leave out other colu
 
   ```yaml
         - id: export
-          uses: lochhh/actions/greendisc_toolkit/export_evidence@<sha>
+          uses: neuroinformatics-unit/actions/greendisc_toolkit/export_evidence@<sha>
           with:
             drop-columns: Location,Asset tag,Supplier
             # keep-all: true        # leave no columns out
@@ -46,4 +46,4 @@ By default, **Location** and **Asset tag** are left out. To leave out other colu
 
 - **Locally:** pass the same as options, e.g. `--drop-columns "Location,Asset tag,Supplier"`, `--keep-all`, or `--out <folder>` to choose where the pack goes.
 
-See more examples in the [action's documentation](https://github.com/lochhh/actions/blob/greendisc-toolkit/greendisc_toolkit/export_evidence/README.md).
+See more examples in the [action's documentation](https://github.com/neuroinformatics-unit/actions/blob/main/greendisc_toolkit/export_evidence/README.md).

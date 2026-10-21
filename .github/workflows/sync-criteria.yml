@@ -38,7 +38,7 @@ jobs:
             echo "old_commit=$(yq '.source_commit' criteria.yml)" >> "$GITHUB_OUTPUT"
           fi
 
-      - uses: lochhh/actions/greendisc_toolkit/sync_criteria@bcad8bbfb2f906ed28a66824c40409a6e8f1406f # greendisc-toolkit branch (untagged)
+      - uses: neuroinformatics-unit/actions/greendisc_toolkit/sync_criteria@2074bc642cccfe12d3299a247e4e2ef74fc514fc # greendisc-6-dependabot (pre-release)
         with:
           track: ${{ steps.config.outputs.track }}
           ref: ${{ steps.config.outputs.ref }}

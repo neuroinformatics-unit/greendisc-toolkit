@@ -16,7 +16,8 @@ updates:
       actions:
         patterns:
           - "*"
-    # The Green DiSC toolkit's own actions have no tagged releases yet, so
-    # Dependabot can't propose versions for them; their pins are updated by hand.
+    # Until the release that adds the Green DiSC toolkit's own actions (v3.1.0),
+    # Dependabot would propose an older release without them; their pins are
+    # updated by hand.
     ignore:
-      - dependency-name: "lochhh/actions/*"
+      - dependency-name: "neuroinformatics-unit/actions/*"
