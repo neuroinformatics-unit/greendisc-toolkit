@@ -7,18 +7,18 @@ Your repository is a copy of the toolkit template, with no link back to it. Most
 
 ## Action versions
 
-Dependabot (`.github/dependabot.yml`) opens one pull request a month updating the workflows' pinned versions of GitHub's actions. The toolkit's own actions have no tagged releases yet, so Dependabot can't propose their versions: until they do, update their pins by hand, copying them from the [template's workflows](https://github.com/lochhh/greendisc-toolkit/tree/main/.github/workflows).
+Dependabot (`.github/dependabot.yml`) opens one pull request a month updating the workflows' pinned versions of GitHub's actions. The toolkit's own actions have no tagged releases yet, so Dependabot can't propose their versions: until they do, update their pins by hand, copying them from the [template's workflows](https://github.com/neuroinformatics-unit/greendisc-toolkit/tree/main/.github/workflows).
 
 ## Template changes
 
 Occasionally the template changes in a way you may want too, such as a record form if/when Green DiSC updates its criteria, or a workflow after an action's inputs change. Records are read by their column headers, so existing records keep working until you update a form.
 
-The template is versioned: each [release](https://github.com/lochhh/greendisc-toolkit/releases) (`v1.0.0`, `v1.1.0`, …) has notes saying what changed and whether you need to do anything. Note which release your repository was created from or last updated to, so you know which notes are new to you. (There are no releases yet: until the first, merge `template/main`, the latest version, instead of a release tag below.)
+The template is versioned: each [release](https://github.com/neuroinformatics-unit/greendisc-toolkit/releases) (`v1.0.0`, `v1.1.0`, …) has notes saying what changed and whether you need to do anything. Note which release your repository was created from or last updated to, so you know which notes are new to you. (There are no releases yet: until the first, merge `template/main`, the latest version, instead of a release tag below.)
 
 In a clone of your repository, add the template as a remote once:
 
 ```sh
-git remote add template https://github.com/lochhh/greendisc-toolkit.git
+git remote add template https://github.com/neuroinformatics-unit/greendisc-toolkit.git
 ```
 
 Then, each time:
