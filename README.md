@@ -27,7 +27,7 @@ For the Green DiSC representative, who sets the repository up:
 - sets up the repository and keeps [Your Green DiSC representative](#your-green-disc-representative) above up to date;
 - starts each review and works through the representative's check-in: reviewing and saving the group record, and, occasionally, merging the criteria sync pull request, updating any published copy of the guides, and tidying data rows left by deleted records (see [Running reviews](docs/reviews.md));
 - manages who's in the group: gives new members Write access (the next review creates their record), and when someone leaves, hands over their shared items, closes their record (which removes its rows from the data) and removes their access; see [When someone leaves](docs/records.md#when-someone-leaves);
-- reviews and merges Dependabot's monthly pull request updating the workflows' action pins;
+- maintains the repository: merges Dependabot's monthly pull request updating the action pins (see [Updating the toolkit](docs/updating.md));
 - when applying, [exports the evidence](docs/evidence.md) and attaches it to the submission, with the representative's profile (`G1-B`) and the onboarding material (`G2-B`).
 
 **Members** (Write role) work through the check-in they get before each review:
@@ -44,6 +44,7 @@ For the Green DiSC representative, who sets the repository up:
 - [Submitting your evidence](docs/evidence.md): an optional export of the records for Green DiSC's auditors, without locations or names
 - [Guides](guides/README.md): starter pages on e-waste and green computing tips, to fill in and publish
 - [Keeping criteria in sync with Green DiSC](docs/criteria-sync.md)
+- [Updating the toolkit](docs/updating.md): how new versions and template changes reach your repository
 
 ## How it works
 
@@ -60,7 +61,7 @@ Inventories and logs (hardware, data, pipelines, training, …) are recorded in 
 | `config.yml` | Your track, and which upstream version of the criteria to follow. |
 | `.github/ISSUE_TEMPLATE/` | The forms the records are created from. |
 | `.github/workflows/` | The automation: saving records on `/save` (and tidying check-ins), starting reviews, syncing the criteria, and exporting the evidence. Each is a thin wrapper around a shared action in [lochhh/actions](https://github.com/lochhh/actions/tree/greendisc-toolkit/greendisc_toolkit). |
-| `.github/dependabot.yml` | Opens one pull request a month updating the pins of GitHub's own actions, to review and merge. The toolkit's own actions have no tagged releases yet, so their pins are updated by hand. |
+| `.github/dependabot.yml` | Opens one pull request a month updating the pins of GitHub's own actions, to review and merge. The toolkit's own actions have no tagged releases yet, so their pins are updated by hand; see [Updating the toolkit](docs/updating.md). |
 
 ## Licence
 
