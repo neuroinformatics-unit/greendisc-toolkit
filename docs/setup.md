@@ -25,6 +25,9 @@ If the policy allows all actions, there is nothing to do. The same setting exist
 - **Workflow permissions:** leave the default (read). Each workflow asks for the permissions it needs.
 - Tick **Allow GitHub Actions to create and approve pull requests**, so the criteria sync can open its pull request. If it is greyed out, your organisation has disabled it; ask an organisation owner.
 
+> [!IMPORTANT]
+> Don't protect the default branch with a rule that requires pull requests (**Settings → Rules** or **Settings → Branches**). Saving a record commits `data/*.csv` straight to it, so `/save` would fail.
+
 ## 4. Choose your track and sync the criteria
 
 Edit [`config.yml`](../config.yml) and set `track`:

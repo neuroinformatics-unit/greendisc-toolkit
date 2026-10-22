@@ -55,7 +55,7 @@ Before each review you'll get a **check-in** issue asking you to go over your re
 
 Find your record with the issue search `is:issue label:personal-record assignee:@me`.
 
-Each person has one record: the one assigned to them, or that they created. Saving a second one gets a reply with a link to the first. A record that is closed, for someone who left or doesn't need one, is never recreated by a review.
+Each person has *only one* personal record: the one created for them in each review, or that they created. Commenting `/save` on a second one gets a reply with a link to the first. A record that is closed, for someone who left or doesn't need one, is never recreated by a review.
 
 ## The group record
 
