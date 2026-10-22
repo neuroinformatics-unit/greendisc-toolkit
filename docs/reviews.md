@@ -34,11 +34,11 @@ Only people with the **Maintain** or **Admin** role can start a review; for anyo
 
    As on members' check-ins, saving a record ticks its item; the representative ticks the rest and closes the check-in when done.
 
-On the **first review**, it also creates the records, as issues: **the group record**, assigned to the representative, and **a personal record for every member** (everyone with the **Write**, **Maintain** or **Admin** role). Later reviews create records only for people who have never had one, such as new members. A closed record is never recreated: close the record of anyone who doesn't need one, and reopen it if they rejoin or it was closed by mistake.
+On the **first review**, it also creates the records, as issues: **the group record**, assigned to the representative, and **a personal record for every member** (everyone with the **Write**, **Maintain** or **Admin** role). Later reviews create records only for people who have never had one, such as new members. A closed record is never recreated: close the record of anyone who doesn't need one, and reopen it if they rejoin or it was closed by mistake. In an organisation, its owners have the Admin role on every repository, so the first review creates records for them too: close those that aren't for members of the group.
 
 It also **closes the previous cycle**: any of its check-ins still open are closed, then its milestone is closed. The run's summary (open the run under **Actions**) lists what was created and any records with unsaved changes.
 
-If a run fails part-way, run it again with the same date: it only adds what's missing.
+If a run fails part-way, run it again with the same date: it only adds what's missing. To change the review date of the current cycle, run it again with the new date and the cycle's name (e.g. `Review-2027-03`); otherwise a date in another month starts a new cycle. A closed cycle's name can't be reused.
 
 ## Finishing a review
 
