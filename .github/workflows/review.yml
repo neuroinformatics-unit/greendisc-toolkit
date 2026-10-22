@@ -33,8 +33,8 @@ jobs:
     if: ${{ !cancelled() && !github.event.repository.is_template }}
     runs-on: ubuntu-latest
     permissions:
-      contents: read # read config.yml and criteria.yml
-      issues: write # milestone, labels and check-ins
+      contents: read # the issue forms, data/ and the guides' history
+      issues: write # records, milestone, labels and check-ins
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
